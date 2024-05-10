@@ -40,7 +40,7 @@ Ensure Neovim is installed via the brew-packages.sh script. Install LazyVim into
 
 ### 5. Setup Tmux
 
-Ensure Tmux is installed via the brew-packages.sh script. Run the .tmux.conf file to apply the settings.
+Ensure Tmux is installed via the brew-packages.sh script. Install tpm from github .Run the .tmux.conf file to apply the settings.
 
 ### 6. Setup Starship
 
