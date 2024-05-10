@@ -9,14 +9,16 @@ HOME_DIR=$HOME
 
 # Script file name (to be excluded from symlinking)
 SCRIPT_FILE="$(basename "$0")"
+# Additional file to exclude from symlinking
+EXCLUDE_FILE="brew-packages.sh"
 
 # Function to remove conflicting files
 remove_conflicts() {
     local relative_path="${1#$DOTFILES_DIR/}"
     local target="$HOME_DIR/$relative_path"
 
-    # Skip if the target is the script file itself
-    if [ "$relative_path" = "$SCRIPT_FILE" ]; then
+    # Skip if the target is the script file itself or the excluded file
+    if [[ "$relative_path" == "$SCRIPT_FILE" || "$relative_path" == "$EXCLUDE_FILE" ]]; then
         return
     fi
 
@@ -30,8 +32,13 @@ remove_conflicts() {
 # Export the function so it's available in subshells
 export -f remove_conflicts
 
-# Run stow to symlink all packages
+# Use find to list all files and directories in the dotfiles directory, ignoring the .git directory and excluded files
+find "$DOTFILES_DIR" -path "$DOTFILES_DIR/.git" -prune -o -type f -print | while read file; do
+    remove_conflicts "$file"
+done
+
+# Run stow to symlink all packages, excluding specified files
 echo "Running 'stow .' to create symlinks..."
-stow --no-folding --verbose=2 --target="$HOME_DIR" --delete --restow --ignore="$SCRIPT_FILE" .
+stow --no-folding --verbose=2 --target="$HOME_DIR" --delete --restow --ignore="$SCRIPT_FILE" --ignore="$EXCLUDE_FILE" .
 
 echo "Setup complete."
