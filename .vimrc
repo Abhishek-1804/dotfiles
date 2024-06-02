@@ -1,5 +1,5 @@
 " Change leader key to ','
-let mapleader=","
+let mapleader=" "
 
 " Increase command history to 1,000
 set history=1000
@@ -10,7 +10,7 @@ set showcmd
 " Enhance command line completion
 set wildmenu
 " Keep 7 lines when scrolling
-set scrolloff=7
+set scrolloff=5
 " Highlight search matches
 set hlsearch
 " Incremental search
@@ -41,12 +41,6 @@ set tabstop=4
 map Y y$
 " Quick save command
 map <leader>w :w!<cr>
-" Map space to search
-map <space> /
-" Map Ctrl-space to reverse search
-map <C-space> ?
-" Clear search highlighting
-map <silent> <leader><cr> :noh<cr>
 " Navigation between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -55,9 +49,9 @@ map <C-l> <C-W>l
 " Close all buffers
 map <leader>ba :bufdo bd<cr>
 " Next buffer
-map <leader>l :bnext<cr>
-" Previous buffer
-map <leader>h :bprevious<cr>
+nnoremap <S-l> :bnext<CR>
+" " Previous buffer
+nnoremap <S-h> :bprevious<CR>
 " Jump to first non-blank character
 map 0 ^
 " Allow unsaved buffer switching
@@ -88,7 +82,7 @@ call plug#end()
 
 " Plugin mappings section
 " Toggle NERDTree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>e :NERDTreeToggle<CR>
 " Search files with fzf
 nnoremap <leader>f :Files<CR>
 " Search buffers with fzf

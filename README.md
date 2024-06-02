@@ -48,7 +48,7 @@ Starship is also installed via the brew-packages.sh script. Configurations will 
 
 ### 7. Run Dotfiles Setup Script
 
-Finally, execute the dotfiles-setup.sh script to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
+Finally, execute `source dotfiles-setup.sh` script to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
 
 ## Post Installation
 

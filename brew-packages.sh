@@ -10,6 +10,8 @@ echo "Updating Homebrew..."
 brew update
 
 # List of Homebrew packages to install
+## Use 'brew leaves' to list all top-level packages
+## Use 'brew list --cask' to list all casks
 PACKAGES=(
 	fd
 	python
@@ -37,7 +39,6 @@ CASKS=(
 	iterm2
 	docker
 	spotify
-	warp
 )
 
 echo "Installing Homebrew casks..."
