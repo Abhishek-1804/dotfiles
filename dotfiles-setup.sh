@@ -10,7 +10,7 @@ HOME_DIR=$HOME
 # Script file name (to be excluded from symlinking)
 SCRIPT_FILE="$(basename "$0")"
 # Additional file to exclude from symlinking
-EXCLUDE_FILE="brew-packages.sh"
+EXCLUDE_FILE="install-packages.sh"
 
 # Function to remove conflicting files
 remove_conflicts() {

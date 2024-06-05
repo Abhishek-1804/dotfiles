@@ -1,6 +1,6 @@
 # Dotfiles Repository
 
-This repository contains all the necessary dotfiles and scripts to set up a development environment. It includes configurations for Zsh, Neovim, Tmux, Starship, and other essential tools, managed through Homebrew and GNU Stow.
+This repository contains all the necessary dotfiles and scripts to set up a development environment. It includes configurations for Zsh, Neovim, Tmux, Starship, Yabai, SKHD, and other essential tools, managed through Homebrew and GNU Stow.
 
 ## Prerequisites
 
@@ -20,33 +20,33 @@ git clone <repository-url> ~/dotfiles
 
 ### 2. Install Required Packages with Homebrew
 
-Run the brew-packages.sh script to install all necessary software via Homebrew. This script will check for the presence of Homebrew and install it if it's not already installed.
+Run the `install-packages.sh` script to install all necessary software via Homebrew. This script will check for the presence of Homebrew and install it if it's not already installed.
 
 ```bash
-source brew-packages.sh
+source install-packages.sh
 ```
 
 ### 3. Install Oh-My-Zsh
 
-Install Oh-My-Zsh, which will automatically create a new .zshrc file in your home directory. If you already have a .zshrc file, Oh-My-Zsh will rename it (usually to .zshrc.pre-oh-my-zsh).
-
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
+Ensure Oh-My-Zsh is installed via the `install-packages.sh` script.
 
 ### 4. Setup Neovim
 
-Ensure Neovim is installed via the brew-packages.sh script. Install LazyVim into .config.
+Ensure Neovim is installed via the `install-packages.sh` script. Install LazyVim into .config.
 
 ### 5. Setup Tmux
 
-Ensure Tmux is installed via the brew-packages.sh script. Install tpm from github .Run the .tmux.conf file to apply the settings.
+Ensure Tmux and tpm(tmux plugin manager) is installed via the `install-packages.sh` script. Run the .tmux.conf file to apply the settings.
 
 ### 6. Setup Starship
 
-Starship is also installed via the brew-packages.sh script. Configurations will be applied on sourcing the zshrc file.
+Starship is also installed via the `install-packages.sh` script. Configurations will be applied on sourcing the zshrc file.
 
-### 7. Run Dotfiles Setup Script
+### 7. Setup Yabai and SKHD
+
+Yabai and SKHD have been added to the .config folder. Ensure they are installed via the `install-packages.sh` script.
+
+### 8. Run Dotfiles Setup Script
 
 Finally, execute `source dotfiles-setup.sh` script to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
 
