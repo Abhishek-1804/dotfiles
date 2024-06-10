@@ -1,6 +1,6 @@
 # Dotfiles Repository
 
-This repository contains all the necessary dotfiles and scripts to set up a development environment. It includes configurations for Zsh, Neovim, Tmux, Starship, Yabai, SKHD, and other essential tools, managed through Homebrew and GNU Stow.
+This repository contains all the necessary dotfiles and scripts to set up a development environment. It includes configurations for Zsh, Neovim, Tmux, Starship, and other essential tools, managed through Homebrew and GNU Stow.
 
 ## Prerequisites
 
@@ -42,11 +42,7 @@ Ensure Tmux and tpm(tmux plugin manager) is installed via the `install-packages.
 
 Starship is also installed via the `install-packages.sh` script. Configurations will be applied on sourcing the zshrc file.
 
-### 7. Setup Yabai and SKHD
-
-Yabai and SKHD have been added to the .config folder. Ensure they are installed via the `install-packages.sh` script.
-
-### 8. Run Dotfiles Setup Script
+### 9. Run Dotfiles Setup Script
 
 Finally, execute `source dotfiles-setup.sh` script to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
 

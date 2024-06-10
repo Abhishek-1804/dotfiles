@@ -25,8 +25,6 @@ PACKAGES=(
 	htop
 	ipython
 	jupyterlab
-	koekeishiya/formulae/skhd
-	koekeishiya/formulae/yabai
 	lazygit
 	make
 	mongodb/brew/mongodb-community
