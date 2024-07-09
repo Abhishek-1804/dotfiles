@@ -9,18 +9,20 @@ HOME_DIR=$HOME
 
 # Script file name (to be excluded from symlinking)
 SCRIPT_FILE="$(basename "$0")"
-# Additional file to exclude from symlinking
-EXCLUDE_FILE="install-packages.sh"
+# Additional files to exclude from symlinking
+EXCLUDE_FILES=("install-packages.sh" "$SCRIPT_FILE")
 
 # Function to remove conflicting files
 remove_conflicts() {
     local relative_path="${1#$DOTFILES_DIR/}"
     local target="$HOME_DIR/$relative_path"
 
-    # Skip if the target is the script file itself or the excluded file
-    if [[ "$relative_path" == "$SCRIPT_FILE" || "$relative_path" == "$EXCLUDE_FILE" ]]; then
-        return
-    fi
+    # Check if the target is one of the excluded files
+    for exclude in "${EXCLUDE_FILES[@]}"; do
+        if [[ "$relative_path" == "$exclude" ]]; then
+            return
+        fi
+    done
 
     # Check if target exists and is not a symlink
     if [ -e "$target" ] && [ ! -L "$target" ]; then
@@ -39,6 +41,6 @@ done
 
 # Run stow to symlink all packages, excluding specified files
 echo "Running 'stow .' to create symlinks..."
-stow --no-folding --verbose=2 --target="$HOME_DIR" --delete --restow --ignore="$SCRIPT_FILE" --ignore="$EXCLUDE_FILE" .
+stow --no-folding --verbose=2 --target="$HOME_DIR" --delete --restow --ignore="$(basename "$SCRIPT_FILE")" --ignore="install-packages.sh" --ignore="README.md".
 
 echo "Setup complete."
