@@ -18,7 +18,6 @@ brew update
 ## Use 'brew leaves' to list all top-level packages
 ## Use 'brew list --cask' to list all casks
 PACKAGES=(
-  sl
   cmatrix
   fd
   fzf
@@ -35,11 +34,13 @@ PACKAGES=(
   openssl@1.1
   python-gdbm@3.11
   python-tk@3.11
-  pyvim
+  rig
   ripgrep
   rust
+  sl
   starship
   stow
+  teamookla/speedtest/speedtest
   tmux
 )
 
@@ -56,7 +57,6 @@ done
 # List of Homebrew casks to install
 CASKS=(
   iterm2
-  docker
 )
 
 echo "Installing Homebrew casks..."
