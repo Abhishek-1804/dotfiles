@@ -18,6 +18,7 @@ brew update
 ## Use 'brew leaves' to list all top-level packages
 ## Use 'brew list --cask' to list all casks
 PACKAGES=(
+  bat
   cmatrix
   fd
   fzf
@@ -42,6 +43,7 @@ PACKAGES=(
   stow
   teamookla/speedtest/speedtest
   tmux
+  tldr
 )
 
 echo "Installing Homebrew packages..."
