@@ -22,6 +22,7 @@ PACKAGES=(
   cmatrix
   fd
   fzf
+  fdupes
   gnu-sed
   htop
   ipython
