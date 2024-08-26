@@ -1,1 +1,0 @@
-plugins/vimTmuxNav.lua

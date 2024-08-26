@@ -21,8 +21,8 @@ PACKAGES=(
   bat
   cmatrix
   fd
-  fzf
   fdupes
+  fzf
   gnu-sed
   htop
   ipython
@@ -31,10 +31,12 @@ PACKAGES=(
   luarocks
   make
   mongodb/brew/mongodb-community
-  neofetch
   neovim
+  ollama
   openblas
   openssl@1.1
+  oven-sh/bun/bun
+  pnpm
   python-gdbm@3.11
   python-tk@3.11
   rig
@@ -44,8 +46,9 @@ PACKAGES=(
   starship
   stow
   teamookla/speedtest/speedtest
-  tmux
   tldr
+  tmux
+  yarn
 )
 
 echo "Installing Homebrew packages..."
