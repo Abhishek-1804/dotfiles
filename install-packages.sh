@@ -28,6 +28,7 @@ PACKAGES=(
   ipython
   jupyterlab
   lazygit
+  luarocks
   make
   mongodb/brew/mongodb-community
   neofetch
