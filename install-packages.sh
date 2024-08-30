@@ -64,6 +64,8 @@ done
 # List of Homebrew casks to install
 CASKS=(
   iterm2
+  docker
+  transmission
 )
 
 echo "Installing Homebrew casks..."
