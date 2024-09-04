@@ -101,3 +101,6 @@ alias brew-maintenance='brew update && brew upgrade && brew cleanup && brew auto
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Created by `pipx` on 2024-09-01 19:59:38
+export PATH="$PATH:/Users/abhishekdeshpande/.local/bin"

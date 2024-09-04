@@ -32,6 +32,7 @@ PACKAGES=(
   make
   mongodb/brew/mongodb-community
   neovim
+  nginx
   ollama
   openblas
   openssl@1.1

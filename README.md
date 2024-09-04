@@ -44,7 +44,7 @@ Starship is also installed via the `install-packages.sh` script. Configurations 
 
 ### 9. Run Dotfiles Setup Script
 
-Finally, execute `source dotfiles-setup.sh` script to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
+Finally, execute `stow --no-folding --verbose=2 --restow --ignore="install-packages.sh" --ignore="README.md" .` to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
 
 ## Post Installation
 
