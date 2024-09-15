@@ -23,11 +23,14 @@ PACKAGES=(
   fd
   fdupes
   fzf
+  gh
   gnu-sed
   htop
+  httpie
   ipython
   jupyterlab
   lazygit
+  llvm@17
   luarocks
   make
   mongodb/brew/mongodb-community
@@ -38,8 +41,10 @@ PACKAGES=(
   openssl@1.1
   oven-sh/bun/bun
   pnpm
+  postgresql@14
   python-gdbm@3.11
   python-tk@3.11
+  python-tk@3.12
   rig
   ripgrep
   rust
@@ -64,8 +69,9 @@ done
 
 # List of Homebrew casks to install
 CASKS=(
-  iterm2
   docker
+  iterm2
+  pgadmin4
   transmission
 )
 
