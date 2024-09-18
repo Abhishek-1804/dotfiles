@@ -43,7 +43,6 @@ PACKAGES=(
   pnpm
   postgresql@14
   python-gdbm@3.11
-  python-tk@3.11
   python-tk@3.12
   rig
   ripgrep
@@ -52,7 +51,7 @@ PACKAGES=(
   starship
   stow
   teamookla/speedtest/speedtest
-  tldr
+  tlrc
   tmux
   yarn
 )
@@ -71,6 +70,7 @@ done
 CASKS=(
   docker
   iterm2
+  miniforge
   pgadmin4
   transmission
 )
