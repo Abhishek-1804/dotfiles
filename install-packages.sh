@@ -22,6 +22,7 @@ PACKAGES=(
   cmatrix
   fd
   fdupes
+  ffmpeg
   fzf
   gh
   gnu-sed
