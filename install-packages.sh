@@ -43,6 +43,7 @@ PACKAGES=(
   oven-sh/bun/bun
   pnpm
   postgresql@14
+  progress
   python-gdbm@3.11
   python-tk@3.12
   rig
@@ -54,6 +55,7 @@ PACKAGES=(
   teamookla/speedtest/speedtest
   tlrc
   tmux
+  watch
   yarn
 )
 
