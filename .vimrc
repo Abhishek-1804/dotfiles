@@ -1,4 +1,4 @@
-" Change leader key to ','
+" Change leader key to ' '
 let mapleader=" "
 
 " Increase command history to 1,000

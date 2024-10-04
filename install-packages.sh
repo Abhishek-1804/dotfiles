@@ -19,15 +19,13 @@ brew update
 ## Use 'brew list --cask' to list all casks
 PACKAGES=(
   bat
+  btop
   cmatrix
   fd
   fdupes
   ffmpeg
   fzf
-  gh
   gnu-sed
-  htop
-  httpie
   ipython
   jupyterlab
   lazygit
@@ -35,18 +33,18 @@ PACKAGES=(
   luarocks
   make
   mongodb/brew/mongodb-community
+  neofetch
   neovim
   nginx
+  nmap
   ollama
   openblas
   openssl@1.1
   oven-sh/bun/bun
   pnpm
   postgresql@14
-  progress
   python-gdbm@3.11
   python-tk@3.12
-  rig
   ripgrep
   rust
   sl
@@ -57,6 +55,7 @@ PACKAGES=(
   tmux
   watch
   yarn
+  yt-dlp
 )
 
 echo "Installing Homebrew packages..."
