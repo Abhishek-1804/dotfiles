@@ -21,6 +21,7 @@ PACKAGES=(
   bat
   btop
   cmatrix
+  fastfetch
   fd
   fdupes
   ffmpeg
@@ -33,7 +34,6 @@ PACKAGES=(
   luarocks
   make
   mongodb/brew/mongodb-community
-  neofetch
   neovim
   nginx
   nmap
@@ -53,9 +53,11 @@ PACKAGES=(
   teamookla/speedtest/speedtest
   tlrc
   tmux
+  tree
   watch
   yarn
   yt-dlp
+
 )
 
 echo "Installing Homebrew packages..."
@@ -71,9 +73,11 @@ done
 # List of Homebrew casks to install
 CASKS=(
   docker
+  google-drive
   iterm2
   miniforge
   pgadmin4
+  surfshark
   transmission
 )
 
