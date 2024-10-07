@@ -57,7 +57,6 @@ PACKAGES=(
   watch
   yarn
   yt-dlp
-
 )
 
 echo "Installing Homebrew packages..."
@@ -72,6 +71,7 @@ done
 
 # List of Homebrew casks to install
 CASKS=(
+  chatgpt
   docker
   google-drive
   iterm2
@@ -79,6 +79,9 @@ CASKS=(
   pgadmin4
   surfshark
   transmission
+  visual-studio-code
+  whatsapp
+  zoom
 )
 
 echo "Installing Homebrew casks..."

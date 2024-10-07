@@ -118,3 +118,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/run/current-system/sw/bin:$PATH"
