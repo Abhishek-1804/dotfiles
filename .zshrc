@@ -1,15 +1,24 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
+
+#oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
+
+#nix
+export PATH="/run/current-system/sw/bin:$PATH"
+
+# first source omz
+source $ZSH/oh-my-zsh.sh
+
+#starship
+eval "$(starship init zsh)"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-eval "$(starship init zsh)"
-export PATH="/opt/homebrew/bin:$PATH"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,8 +82,6 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -96,8 +103,6 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-alias brew-maintenance='brew update && brew upgrade --greedy && brew cleanup && brew doctor'
-
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -118,4 +123,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH="/run/current-system/sw/bin:$PATH"
