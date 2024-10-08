@@ -108,6 +108,32 @@
 
       system.defaults = {
           dock.autohide = true;
+          dock.persistent-apps = [
+            "System/Applications/Mail.app"
+            "System/Applications/Music.app"
+            "System/Applications/App Store.app"
+            "System/Applications/FaceTime.app"
+            "System/Applications/System Settings.app"
+            "System/Applications/Reminders.app"
+            "System/Applications/Notes.app"
+            "System/Applications/FindMy.app"
+            "System/Applications/Messages.app"
+            "System/Applications/Passwords.app"
+            "/Applications/Safari.app"
+            "${pkgs.arc-browser}/Applications/Arc.app"
+            "/Applications/Google Chrome.app"
+            "/Applications/WhatsApp.app"
+            "/Applications/ChatGPT.app"
+            "/Applications/Discord.app"
+            "/Applications/Notion.app"
+            "${pkgs.iterm2}/Applications/iTerm2.app"
+            "/System/Applications/Utilities/Activity Monitor.app"
+            "/Applications/Surfshark.app"
+            "/Applications/UTM.app"
+            "/Applications/Docker.app"
+            "/System/Applications/iPhone Mirroring.app"
+            "/Applications/zoom.us.app"
+          ];
           loginwindow.GuestEnabled = false;
           finder.FXPreferredViewStyle = "clmv";
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
