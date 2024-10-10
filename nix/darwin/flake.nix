@@ -12,6 +12,7 @@
   let
     configuration = { pkgs, config, ... }: {
 
+      # Allowing proprietary software download
       nixpkgs.config.allowUnfree = true;
 
       # List packages installed in system profile. To search by name, run:
@@ -28,6 +29,7 @@
             pkgs.fdupes
             pkgs.ffmpeg
             pkgs.fzf
+            pkgs.hping
             pkgs.lazygit
             pkgs.neovim
             pkgs.nginx
@@ -35,6 +37,7 @@
             pkgs.ollama
             pkgs.jdk
             pkgs.openssl
+            pkgs.transmission_4
             pkgs.pnpm
             pkgs.postgresql_14
             pkgs.ripgrep
@@ -50,8 +53,14 @@
             # Gui applications
             pkgs.iterm2
             pkgs.arc-browser
+            pkgs.raycast
+            pkgs.postman
+            pkgs.zoom-us
+            pkgs.pgadmin4
+            pkgs.vscode
         ];
 
+      # Homebrew stuff
       homebrew = {
           enable = true;
           brews = [
@@ -66,26 +75,25 @@
             "watch"
           ];
           casks = [
-              "chatgpt"
               "docker"
+              "chatgpt"
               "google-drive"
               "miniforge"
-              "pgadmin4"
+              "notion"
               "surfshark"
-              "transmission"
               "whatsapp"
-              "visual-studio-code"
-              "zoom"
           ];
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
           onActivation.upgrade = true;
         };
 
+        # Font config
         fonts.packages = [
           (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
         ];
 
+      # To find applications installed from nixpkgs in spotlight search
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
           name = "system-applications";
@@ -106,6 +114,7 @@
         done
       '';
 
+      # Mac system default settings
       system.defaults = {
           dock.autohide = true;
           dock.persistent-apps = [
@@ -132,13 +141,12 @@
             "/Applications/UTM.app"
             "/Applications/Docker.app"
             "/System/Applications/iPhone Mirroring.app"
-            "/Applications/zoom.us.app"
+            "${pkgs.zoom-us}/Applications/zoom.us.app"
           ];
           loginwindow.GuestEnabled = false;
           finder.FXPreferredViewStyle = "clmv";
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
           NSGlobalDomain.KeyRepeat = 2;
-
         };
 
       # Auto upgrade nix package and the daemon service.
@@ -177,7 +185,8 @@
               user = "abhishekdeshpande";
               autoMigrate = true;
             };
-        }
+          }
+
         ];
     };
 

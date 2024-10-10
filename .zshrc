@@ -8,9 +8,6 @@ export ZSH="$HOME/.oh-my-zsh"
 #nix
 export PATH="/run/current-system/sw/bin:$PATH"
 
-# first source omz
-source $ZSH/oh-my-zsh.sh
-
 #starship
 eval "$(starship init zsh)"
 
@@ -81,6 +78,9 @@ eval "$(starship init zsh)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
+
+# source omz
+source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
