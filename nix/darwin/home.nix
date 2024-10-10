@@ -5,17 +5,30 @@
   # paths it should manage.
   home.username = "abhishekdeshpande";
   home.homeDirectory = "/Users/abhishekdeshpande";
-
-  # This value determines the Home Manager release that your
-  # configuration is compatible with. This helps avoid breakage
-  # when a new Home Manager release introduces backwards
-  # incompatible changes.
-  #
-  # You can update Home Manager without changing this value. See
-  # the Home Manager release notes for a list of state version
-  # changes in each release.
   home.stateVersion = "24.05";
 
-  # Let Home Manager install and manage itself.
+  # Packages to install
+  home.packages = [
+
+  ];
+
+  # Manage files
+  home.file = {
+    ".zshrc".source = ../../.zshrc;
+    ".vimrc".source = ../../.vimrc;
+    ".tmux.conf".source = ../../.tmux.conf;
+    ".config/nvim/lua/config/autocmds.lua".source = ../../.config/nvim/lua/config/autocmds.lua;
+    ".config/nvim/lua/config/keymaps.lua".source = ../../.config/nvim/lua/config/keymaps.lua;
+    ".config/nvim/lua/config/lazy.lua".source = ../../.config/nvim/lua/config/lazy.lua;
+    ".config/nvim/lua/config/options.lua".source = ../../.config/nvim/lua/config/options.lua;
+    ".config/nvim/lua/plugins/colorscheme.lua".source = ../../.config/nvim/lua/plugins/colorscheme.lua;
+    ".config/nvim/lua/plugins/genAI.lua".source = ../../.config/nvim/lua/plugins/genAI.lua;
+    ".config/nvim/lua/plugins/leetcode/lua".source = ../../.config/nvim/lua/plugins/leetcode.lua;
+    ".config/nvim/lua/plugins/vimTmuxNav.lua".source = ../../.config/nvim/lua/plugins/vimTmuxNav.lua;
+    ".config/starship.toml".source = ../../.config/starship.toml;
+  };
+
+  # Enable Home Manager to manage itself
   programs.home-manager.enable = true;
+
 }

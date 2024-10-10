@@ -1,62 +1,55 @@
 # Dotfiles Repository
 
-This repository contains all the necessary dotfiles and scripts to set up a development environment. It includes configurations for Zsh, Neovim, Tmux, Starship, and other essential tools, managed through Homebrew and GNU Stow.
+This repository contains all the necessary configuration files and scripts to set up a development environment on macOS, using `nix-darwin` and `home-manager` for declarative management of system and user-level configurations. It includes settings for Zsh, Neovim, Tmux, Starship, and other essential tools, eliminating the need for manual setup.
 
 ## Prerequisites
 
-Before you begin, ensure that you have administrative access to your machine and a stable internet connection for downloading necessary packages.
+Ensure you have administrative access to your machine, with `nix` installed and configured for macOS.
 
 ## Installation Flow
 
-Follow these steps to replicate the development environment:
+Follow these steps to replicate this setup:
 
 ### 1. Clone the Dotfiles Repository
 
-Start by cloning this repository into the `dotfiles` directory in your home folder:
+Start by cloning this repository into your home directory:
 
 ```bash
 git clone <repository-url> ~/dotfiles
 ```
 
-### 2. Install Required Packages with Homebrew
+### 2. Install `nix-darwin` and `home-manager`
 
-Run the `install-packages.sh` script to install all necessary software via Homebrew. This script will check for the presence of Homebrew and install it if it's not already installed.
+Before you begin, ensure that you have administrative access to your machine and a stable internet connection for downloading necessary packages.
+
+Make sure `nix-darwin` and `home-manager` are installed on your system. You can find installation instructions for `nix-darwin` [here](https://github.com/LnL7/nix-darwin) and for `home-manager` [here](https://nix-community.github.io/home-manager/).
+
+Video guides:
+
+- nix-darwin: [Watch this video for detailed instructions](https://www.youtube.com/watch?v=Z8BL8mdzWHI)
+- home-manager: [Watch this video for detailed instructions](https://www.youtube.com/watch?v=k9yKm_k5cVA)
+
+### 3. Apply the Configuration
+
+Once `nix-darwin` and `home-manager` are installed, apply the configurations by running the following command:
 
 ```bash
-source install-packages.sh
+darwin-rebuild switch --flake ~/dotfiles/nix/darwin#Abhisheks-MacBook-Air
 ```
 
-### 3. Install Oh-My-Zsh
+This command will apply both system-level (`nix-darwin`) and user-level (`home-manager`) configurations, ensuring that all packages, tools, and settings are automatically managed.
 
-Ensure Oh-My-Zsh is installed via the `install-packages.sh` script.
+### 4. Managing Dotfiles with `home-manager`
 
-### 4. Setup Neovim
+All dotfiles in this repository are managed declaratively through `home-manager`, making it easy to version control and apply configurations across different environments. If you make changes to your dotfiles, simply update the relevant `.nix` files and run the rebuild command to apply them.
 
-Ensure Neovim is installed via the `install-packages.sh` script. Install LazyVim into .config.
+### 5. Customization
 
-### 5. Setup Tmux
+Feel free to modify the configurations and scripts as needed. All changes should be made in the `.nix` files under the `nix` directory, and applied via the `darwin-rebuild` command.
 
-Ensure Tmux and tpm(tmux plugin manager) is installed via the `install-packages.sh` script. Run the .tmux.conf file to apply the settings.
+## Backup and Version Control
 
-### 6. Setup Starship
-
-Starship is also installed via the `install-packages.sh` script. Configurations will be applied on sourcing the zshrc file.
-
-### 9. Run Dotfiles Setup Script
-
-Finally, execute `stow --no-folding --verbose=2 --restow --ignore="install-packages.sh" --ignore="README.md" .` to symlink all configuration files from the ~/dotfiles directory to your home directory. This script will remove any conflicting existing configuration files in your home directory.
-
-## Post Installation
-
-After completing the setup, open a new terminal window to see the changes in effect. You might need to restart your terminal or your machine to ensure all configurations are properly loaded.
-
-## Customization
-
-Feel free to modify the configurations and scripts according to your personal preferences or specific needs.
-
-## Backup
-
-Always ensure you have backups of your current configurations before you run this setup to avoid accidental loss of personal settings.
+By managing your dotfiles declaratively with `nix-darwin` and `home-manager`, your entire system configuration is stored in version control. This ensures that your setup is reproducible across different machines.
 
 ## Contributions
 
@@ -64,4 +57,4 @@ Contributions to this repository are welcome. Please fork the repository and sub
 
 ## License
 
-This dotfiles repository is made available under the "MIT License". Please see the LICENSE file in this repository for the full text.
+This dotfiles repository is made available under the MIT License. Please see the LICENSE file in this repository for the full text.
