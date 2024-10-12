@@ -26,7 +26,7 @@
             # CLI tools
             pkgs.mkalias
             pkgs.bat
-            pkgs.btop
+            pkgs.bun
             pkgs.cmatrix
             pkgs.fastfetch
             pkgs.fd
@@ -40,13 +40,16 @@
             pkgs.nmap
             pkgs.ollama
             pkgs.jdk
+            pkgs.rustc
             pkgs.openssl
             pkgs.transmission_4
             pkgs.pnpm
+            pkgs.mas
             pkgs.postgresql_14
             pkgs.ripgrep
             pkgs.sl
             pkgs.stow
+            pkgs.nodejs_22
             pkgs.starship
             pkgs.tlrc
             pkgs.tmux
@@ -68,21 +71,16 @@
       homebrew = {
           enable = true;
           brews = [
+            "btop"
             "gnu-sed"
             "llvm@17"
             "luarocks"
-            "make"
-            "mas"
-            "python-gdbm@3.11"
-            "python-tk@3.12"
-            "rust"
             "watch"
           ];
           casks = [
               "docker"
               "chatgpt"
               "google-drive"
-              "miniforge"
               "notion"
               "surfshark"
               "whatsapp"
@@ -174,6 +172,7 @@
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
 
+      # Users
       users.users.abhishekdeshpande.home = "/Users/abhishekdeshpande";
     };
   in

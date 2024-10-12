@@ -9,7 +9,6 @@
 
   # Packages to install
   home.packages = [
-
   ];
 
   # Manage files
