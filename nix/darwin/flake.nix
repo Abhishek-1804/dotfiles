@@ -35,10 +35,12 @@
             pkgs.fzf
             pkgs.hping
             pkgs.lazygit
+            pkgs.deno
             pkgs.neovim
             pkgs.nginx
             pkgs.nmap
             pkgs.ollama
+            pkgs.lynx
             pkgs.jdk
             pkgs.rustc
             pkgs.openssl
@@ -85,6 +87,9 @@
               "surfshark"
               "whatsapp"
           ];
+          masApps = {
+            "Amphetamine" = 937984704;
+          };
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
           onActivation.upgrade = true;
