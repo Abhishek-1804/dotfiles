@@ -13,9 +13,6 @@
 
   # Manage files
   home.file = {
-    ".zshrc".source = ../../.zshrc;
-    ".vimrc".source = ../../.vimrc;
-    ".tmux.conf".source = ../../.tmux.conf;
     ".config/nvim/lua/config/autocmds.lua".source = ../../.config/nvim/lua/config/autocmds.lua;
     ".config/nvim/lua/config/keymaps.lua".source = ../../.config/nvim/lua/config/keymaps.lua;
     ".config/nvim/lua/config/lazy.lua".source = ../../.config/nvim/lua/config/lazy.lua;
@@ -24,7 +21,13 @@
     ".config/nvim/lua/plugins/genAI.lua".source = ../../.config/nvim/lua/plugins/genAI.lua;
     ".config/nvim/lua/plugins/leetcode/lua".source = ../../.config/nvim/lua/plugins/leetcode.lua;
     ".config/nvim/lua/plugins/vimTmuxNav.lua".source = ../../.config/nvim/lua/plugins/vimTmuxNav.lua;
-    ".config/starship.toml".source = ../../.config/starship.toml;
+  };
+
+  programs = {
+    zsh = (import ../shared/zsh.nix { inherit config pkgs; });
+    vim = (import ../shared/vim.nix { inherit config pkgs; });
+    tmux = (import ../shared/tmux.nix { inherit config pkgs; });
+    starship = (import ../shared/starship.nix { inherit config pkgs; });
   };
 
   # Enable Home Manager to manage itself
