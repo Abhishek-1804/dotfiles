@@ -19,7 +19,6 @@
   pkgs.jdk
   pkgs.pnpm
   pkgs.ripgrep
-  pkgs.postgresql_14
   pkgs.sl
   pkgs.stow
   pkgs.nodejs_22

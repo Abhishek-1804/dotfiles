@@ -25,13 +25,12 @@ let
     };
   };
 
-in
-{
-  enable = true;
+  # Detect or install `zsh`
+  zshPath = if pkgs.stdenv.isDarwin then "/bin/zsh" else "${pkgs.zsh}/bin/zsh";
 
-  aggressiveResize = true;
-  baseIndex = 1;
-  disableConfirmationPrompt = true;
+in
+  {
+  enable = true;
 
   plugins = with pkgs.tmuxPlugins; [
     resurrect
@@ -40,6 +39,8 @@ in
   ];
 
   extraConfig = ''
+    set -g default-command "${zshPath}"
+
     set -g mouse on
 
     bind-key h select-pane -L
@@ -50,7 +51,6 @@ in
     set-option -g status-position top
     set -sg escape-time 10
 
-    set -g @catppuccin_window_status_style "rounded"
     set -g @catppuccin_window_left_separator ""
     set -g @catppuccin_window_right_separator " "
     set -g @catppuccin_window_middle_separator " █"
@@ -65,6 +65,7 @@ in
     set -g @catppuccin_status_modules_right "directory session"
     set -g @catppuccin_status_left_separator  " "
     set -g @catppuccin_status_right_separator ""
+    set -g @catppuccin_status_right_separator_inverse "no"
     set -g @catppuccin_status_fill "icon"
     set -g @catppuccin_status_connect_separator "no"
 

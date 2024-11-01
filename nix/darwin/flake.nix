@@ -29,6 +29,7 @@
           pkgs.rustc
           pkgs.openssl
           pkgs.yt-dlp
+          pkgs.speedtest-cli
           pkgs.transmission_4
           pkgs.mas
 
@@ -42,6 +43,11 @@
           pkgs.vscode
         ];
 
+        # Import service configs
+        imports = [
+          # ../shared/modules/services/postgresql.nix
+        ];
+
         # Homebrew stuff
         homebrew = {
           enable = true;
@@ -52,12 +58,17 @@
             "llvm@17"
             "luarocks"
             "watch"
+            {
+              name = "postgresql@14";
+              start_service = true;
+            }
           ];
 
+
           casks = [
-            "docker"
             "chatgpt"
             "google-drive"
+            "docker"
             "notion"
             "surfshark"
             "whatsapp"
@@ -136,6 +147,9 @@
           NSGlobalDomain.AppleInterfaceStyle = "Dark";
           NSGlobalDomain.KeyRepeat = 2;
         };
+
+        # Enable sudo auth with touch id
+        security.pam.enableSudoTouchIdAuth = true; 
 
         # Auto upgrade nix package and the daemon service.
         services.nix-daemon.enable = true;
