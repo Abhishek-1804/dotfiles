@@ -24,12 +24,9 @@
         environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
           # CLI tools
           pkgs.mkalias
-          pkgs.hping
           pkgs.lynx
-          pkgs.rustc
           pkgs.openssl
           pkgs.yt-dlp
-          pkgs.speedtest-cli
           pkgs.transmission_4
           pkgs.mas
 
