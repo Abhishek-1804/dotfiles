@@ -2,6 +2,8 @@
 
 [
   # CLI tools
+  pkgs.git
+  pkgs.openssh
   pkgs.bat
   pkgs.bun
   pkgs.cmatrix
@@ -13,6 +15,8 @@
   pkgs.lazygit
   pkgs.deno
   pkgs.neovim
+  pkgs.ngrok
+  pkgs.lazydocker
   pkgs.nginx
   pkgs.nmap
   pkgs.ollama
@@ -28,5 +32,4 @@
   pkgs.tree
   pkgs.yarn
 
-  # GUI applications
 ]
