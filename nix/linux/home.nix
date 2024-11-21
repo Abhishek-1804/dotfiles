@@ -1,17 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "abhishekdeshpande";
-  home.homeDirectory = "/Users/abhishekdeshpande";
-  home.stateVersion = "24.05";
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
-  # Packages to install
-  home.packages = [
+  # Specify the username and home directory
+  home.username = "root";
+  home.homeDirectory = "/root";
+  home.stateVersion = "24.05"; # Update to match the Nixpkgs version you're using
+
+  # Import system-level packages from shared/modules/packages.nix
+  home.packages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
+    # Add user-level packages here
+    pkgs.git
+    pkgs.btop
   ];
 
-  # Manage files
+  # Manage dotfiles and configurations
   home.file = {
     ".config/nvim/lua/config/autocmds.lua".source = ../../.config/nvim/lua/config/autocmds.lua;
     ".config/nvim/lua/config/keymaps.lua".source = ../../.config/nvim/lua/config/keymaps.lua;

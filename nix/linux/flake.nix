@@ -1,5 +1,6 @@
 {
-  description = "Top Level Linux System Flake";
+  description = "Flake for Linux";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     home-manager = {
@@ -7,38 +8,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ self, nixpkgs, home-manager }: 
-    let
-      configuration = { pkgs, ... }: {
-        # Allow unfree packages if needed
-        nixpkgs.config.allowUnfree = true;
 
-        # System packages
-        environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
-          # CLI tools
-          pkgs.git
-          pkgs.openssh
+  outputs = { self, nixpkgs, home-manager }: {
+    homeConfigurations = {
+      root = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
+        # Home Manager configuration
+        modules = [
+          ./home.nix # Path to home.nix configuration
         ];
-
-        # Import additional configurations if needed
-        imports = [];
-
-      };
-    in {
-      # Define configurations for different Linux systems
-      nixosConfigurations = {
-        "my-linux-server" = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            configuration
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.abhishekdeshpande = import ./home.nix;
-            }
-          ];
-        };
       };
     };
+  };
 }
+

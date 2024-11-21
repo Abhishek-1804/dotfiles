@@ -8,6 +8,7 @@
   pkgs.fastfetch
   pkgs.fd
   pkgs.fdupes
+  pkgs.hping
   pkgs.ffmpeg
   pkgs.fzf
   pkgs.lazygit
