@@ -14,7 +14,6 @@
     # Add user-level packages here
     pkgs.git
     pkgs.btop
-
   ];
 
   # Manage dotfiles and configurations
