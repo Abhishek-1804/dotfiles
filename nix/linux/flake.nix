@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, home-manager }: {
     homeConfigurations = {
-      root = home-manager.lib.homeManagerConfiguration {
+      akdp = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
         # Home Manager configuration
