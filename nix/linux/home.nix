@@ -5,8 +5,10 @@
   nixpkgs.config.allowUnfree = true;
 
   # Specify the username and home directory
-  home.username = "root";
-  home.homeDirectory = "/root";
+  home.username = "akdp";
+  # For root user
+  # home.homeDirectory = "/root";
+  home.homeDirectory = "/home/akdp";
   home.stateVersion = "24.05"; # Update to match the Nixpkgs version you're using
 
   # Import system-level packages from shared/modules/packages.nix
