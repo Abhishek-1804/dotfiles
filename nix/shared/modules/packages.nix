@@ -21,7 +21,6 @@
   pkgs.nginx
   pkgs.nmap
   pkgs.ollama
-  pkgs.speedtest-cli
   pkgs.jdk
   pkgs.pnpm
   pkgs.ripgrep
