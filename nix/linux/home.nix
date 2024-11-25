@@ -30,6 +30,7 @@
 
   programs = {
     zsh = (import ../shared/zsh.nix { inherit config pkgs; });
+    zoxide = (import ../shared/zoxide.nix { inherit config pkgs; });
     vim = (import ../shared/vim.nix { inherit config pkgs; });
     tmux = (import ../shared/tmux.nix { inherit config pkgs; });
     starship = (import ../shared/starship.nix { inherit config pkgs; });

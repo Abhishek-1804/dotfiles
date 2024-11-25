@@ -8,6 +8,7 @@
   history.size = 10000;
   initExtra = ''
     eval "$(starship init zsh)"
+    eval "$(zoxide init zsh)"
   '';
   oh-my-zsh = {
     enable = true;
