@@ -54,7 +54,6 @@
             "gnu-sed"
             "llvm@17"
             "luarocks"
-            "python-tk"
             "watch"
             {
               name = "postgresql@14";
