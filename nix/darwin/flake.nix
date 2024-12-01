@@ -27,6 +27,7 @@
           pkgs.lynx
           pkgs.openssl
           pkgs.yt-dlp
+          pkgs.hugo
           pkgs.transmission_4
           pkgs.mas
 
@@ -35,6 +36,7 @@
           pkgs.zoom-us
           pkgs.arc-browser
           pkgs.raycast
+          pkgs.utm
           pkgs.postman
           pkgs.pgadmin4
           pkgs.vscode
@@ -55,29 +57,31 @@
             "llvm@17"
             "luarocks"
             "watch"
-            {
-              name = "postgresql@14";
-              start_service = true;
-            }
+            "postgresql@14"
           ];
-
 
           casks = [
             "chatgpt"
             "google-drive"
             "docker"
+            "discord"
             "notion"
             "surfshark"
             "whatsapp"
           ];
 
-          masApps = {
-            "Amphetamine" = 937984704;
-          };
-
           onActivation.cleanup = "zap";
           onActivation.autoUpdate = true;
           onActivation.upgrade = true;
+
+          masApps = {
+            "Amphetamine" = 937984704;
+            "Microsoft Word" = 462054704;
+            "Microsoft Excel" = 462058435;
+            "iMovie" = 408981434;
+            "Tap Bot" = 6444782835;
+          };
+
         };
 
         # Font config
@@ -134,7 +138,7 @@
             "${pkgs.iterm2}/Applications/iTerm2.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
-            "/Applications/UTM.app"
+            "${pkgs.utm}/Applications/UTM.app"
             "/Applications/Docker.app"
             "/System/Applications/iPhone Mirroring.app"
             "${pkgs.zoom-us}/Applications/zoom.us.app"

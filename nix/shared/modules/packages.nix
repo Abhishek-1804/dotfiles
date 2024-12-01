@@ -18,6 +18,9 @@
   pkgs.neovim
   pkgs.ngrok
   pkgs.lazydocker
+  pkgs.python312Packages.tkinter
+  pkgs.speedtest-rs
+  pkgs.go
   pkgs.nginx
   pkgs.nmap
   pkgs.ollama
