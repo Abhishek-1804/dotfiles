@@ -21,6 +21,7 @@
   pkgs.python312Packages.tkinter
   pkgs.speedtest-rs
   pkgs.go
+  pkgs.hugo
   pkgs.nginx
   pkgs.nmap
   pkgs.ollama

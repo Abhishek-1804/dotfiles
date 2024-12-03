@@ -27,7 +27,6 @@
           pkgs.lynx
           pkgs.openssl
           pkgs.yt-dlp
-          pkgs.hugo
           pkgs.transmission_4
           pkgs.mas
 
