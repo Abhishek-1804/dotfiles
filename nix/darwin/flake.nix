@@ -57,6 +57,7 @@
             "luarocks"
             "watch"
             "postgresql@14"
+
           ];
 
           casks = [
@@ -64,6 +65,7 @@
             "google-drive"
             "docker"
             "discord"
+            "ngrok"
             "notion"
             "surfshark"
             "whatsapp"

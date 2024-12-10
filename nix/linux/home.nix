@@ -26,7 +26,7 @@
     ".config/nvim/lua/config/options.lua".source = ../../.config/nvim/lua/config/options.lua;
     ".config/nvim/lua/plugins/colorscheme.lua".source = ../../.config/nvim/lua/plugins/colorscheme.lua;
     ".config/nvim/lua/plugins/genAI.lua".source = ../../.config/nvim/lua/plugins/genAI.lua;
-    ".config/nvim/lua/plugins/leetcode/lua".source = ../../.config/nvim/lua/plugins/leetcode.lua;
+    ".config/nvim/lua/plugins/leetcode.lua".source = ../../.config/nvim/lua/plugins/leetcode.lua;
     ".config/nvim/lua/plugins/vimTmuxNav.lua".source = ../../.config/nvim/lua/plugins/vimTmuxNav.lua;
   };
 
