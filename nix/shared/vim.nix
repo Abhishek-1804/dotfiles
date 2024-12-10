@@ -30,6 +30,7 @@
       set wildmenu
       set scrolloff=5
       set hlsearch
+      set relativenumber
       set incsearch
       set ignorecase
       set smartcase
