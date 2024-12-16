@@ -68,7 +68,6 @@
             "ngrok"
             "notion"
             "surfshark"
-            "monero-wallet"
             "whatsapp"
           ];
 

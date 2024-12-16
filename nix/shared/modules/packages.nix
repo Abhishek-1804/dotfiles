@@ -2,6 +2,7 @@
 
 [
   # Programming Languages and Development Tools
+  pkgs.neovim
   pkgs.nodejs
   pkgs.python3
   pkgs.python312Packages.tkinter
@@ -31,6 +32,7 @@
   pkgs.bat
   pkgs.fastfetch
   pkgs.fd
+  pkgs.ripgrep
   pkgs.fdupes
   pkgs.fzf
   pkgs.tree
