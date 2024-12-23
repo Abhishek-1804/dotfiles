@@ -65,7 +65,6 @@
             "google-drive"
             "docker"
             "discord"
-            "ngrok"
             "notion"
             "surfshark"
             "whatsapp"
