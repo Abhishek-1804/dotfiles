@@ -29,6 +29,7 @@
   pkgs.wget
 
   # CLI Utilities and System Tools
+  pkgs.atuin
   pkgs.bat
   pkgs.fastfetch
   pkgs.fd
