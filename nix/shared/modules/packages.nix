@@ -29,7 +29,6 @@
   pkgs.wget
 
   # CLI Utilities and System Tools
-  pkgs.atuin
   pkgs.bat
   pkgs.fastfetch
   pkgs.fd
@@ -38,8 +37,6 @@
   pkgs.fzf
   pkgs.tree
   pkgs.stow
-  pkgs.starship
-  pkgs.tmux
   pkgs.lazygit
   pkgs.lazydocker
   pkgs.tlrc
