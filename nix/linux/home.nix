@@ -35,6 +35,7 @@
     vim = (import ../shared/vim.nix { inherit config pkgs; });
     tmux = (import ../shared/tmux.nix { inherit config pkgs; });
     starship = (import ../shared/starship.nix { inherit config pkgs; });
+    atuin = (import ../shared/atuin.nix { inherit config pkgs; });
   };
 
   # Enable Home Manager to manage itself
