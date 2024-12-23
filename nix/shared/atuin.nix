@@ -4,11 +4,12 @@
   enable = true;
   enableZshIntegration = true;
   settings = {
-    style = "compact";
+    style = "auto";
     sync_address = "https://api.atuin.sh";
-    auto_sync = true;
+    sync_frequency = "15m";
+      auto_sync = true;
     theme = {
-      name = "autumn"; # Change to your preferred theme
+      name = "autumn"; # Specify your preferred theme
     };
   };
 }
