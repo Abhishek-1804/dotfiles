@@ -31,7 +31,6 @@
           pkgs.mas
 
           # GUI applications
-          pkgs.iterm2
           pkgs.zoom-us
           pkgs.arc-browser
           pkgs.raycast
@@ -64,6 +63,7 @@
             "chatgpt"
             "google-drive"
             "docker"
+            "ghostty"
             "discord"
             "notion"
             "surfshark"
