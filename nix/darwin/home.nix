@@ -21,6 +21,7 @@
     ".config/nvim/lua/plugins/genAI.lua".source = ../../.config/nvim/lua/plugins/genAI.lua;
     ".config/nvim/lua/plugins/leetcode.lua".source = ../../.config/nvim/lua/plugins/leetcode.lua;
     ".config/nvim/lua/plugins/vimTmuxNav.lua".source = ../../.config/nvim/lua/plugins/vimTmuxNav.lua;
+    ".config/ghostty/config".source = ../../.config/ghostty/config;
   };
 
   programs = {
