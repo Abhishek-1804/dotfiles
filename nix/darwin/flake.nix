@@ -135,7 +135,7 @@
             "/Applications/ChatGPT.app"
             "/Applications/Discord.app"
             "/Applications/Notion.app"
-            "${pkgs.iterm2}/Applications/iTerm2.app"
+            "/Applications/Ghostty.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
