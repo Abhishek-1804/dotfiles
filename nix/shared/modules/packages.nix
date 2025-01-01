@@ -43,6 +43,7 @@
   pkgs.sl
   pkgs.cmatrix
   pkgs.hwloc
+  pkgs.yazi
 
   # Media and Content Tools
   pkgs.ffmpeg
