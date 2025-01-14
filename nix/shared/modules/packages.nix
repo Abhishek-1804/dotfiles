@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 [
-  # Programming Languages and Development Tools
+# Programming Languages and Development Tools
   pkgs.neovim
   pkgs.nodejs
   pkgs.python3
@@ -19,16 +19,17 @@
   pkgs.libuv
   pkgs.zlib
 
-  # Networking and Security Tools
+# Networking and Security Tools
   pkgs.nginx
   pkgs.nmap
   pkgs.hping
+  pkgs.gping
   pkgs.hashcat
   pkgs.speedtest-rs
   pkgs.curl
   pkgs.wget
 
-  # CLI Utilities and System Tools
+# CLI Utilities and System Tools
   pkgs.bat
   pkgs.fastfetch
   pkgs.fd
@@ -40,16 +41,19 @@
   pkgs.lazygit
   pkgs.lazydocker
   pkgs.tlrc
-  pkgs.sl
-  pkgs.cmatrix
   pkgs.hwloc
   pkgs.yazi
 
-  # Media and Content Tools
+# Random Cool Tools
+  pkgs.sl
+  pkgs.cmatrix
+  pkgs.hollywood
+
+# Media and Content Tools
   pkgs.ffmpeg
   pkgs.hugo
 
-  # Specialized Tools
+# Specialized Tools
   pkgs.ollama
-]
+  ]
 
