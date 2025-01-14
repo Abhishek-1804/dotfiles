@@ -47,7 +47,6 @@
 # Random Cool Tools
   pkgs.sl
   pkgs.cmatrix
-  pkgs.hollywood
 
 # Media and Content Tools
   pkgs.ffmpeg
