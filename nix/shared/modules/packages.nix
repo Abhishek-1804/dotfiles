@@ -14,6 +14,7 @@
   pkgs.pnpm
   pkgs.yarn
   pkgs.deno
+  pkgs.scc
   pkgs.gcc
   pkgs.cmake
   pkgs.libuv
@@ -26,12 +27,11 @@
   pkgs.gping
   pkgs.hashcat
   pkgs.speedtest-rs
-  pkgs.curl
-  pkgs.wget
+  pkgs.aria2
+  pkgs.rsync
 
 # CLI Utilities and System Tools
   pkgs.bat
-  pkgs.fastfetch
   pkgs.fd
   pkgs.ripgrep
   pkgs.fdupes
@@ -45,6 +45,7 @@
   pkgs.yazi
 
 # Random Cool Tools
+  pkgs.fastfetch
   pkgs.sl
   pkgs.cmatrix
 
