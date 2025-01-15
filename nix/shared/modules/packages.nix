@@ -2,7 +2,7 @@
 
 [
 # Programming Languages and Development Tools
-  pkgs.neovim
+  pkgs.git
   pkgs.nodejs
   pkgs.python3
   pkgs.python312Packages.tkinter
