@@ -38,6 +38,7 @@
           pkgs.postman
           pkgs.pgadmin4
           pkgs.vscode
+          pkgs.slack
         ];
 
         # Import service configs
@@ -124,7 +125,6 @@
             "System/Applications/FaceTime.app"
             "System/Applications/System Settings.app"
             "System/Applications/Reminders.app"
-            "System/Applications/Notes.app"
             "System/Applications/FindMy.app"
             "System/Applications/Messages.app"
             "System/Applications/Passwords.app"
@@ -134,6 +134,7 @@
             "/Applications/WhatsApp.app"
             "/Applications/ChatGPT.app"
             "/Applications/Discord.app"
+            "${pkgs.slack}/Applications/Slack.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
             "/System/Applications/Utilities/Activity Monitor.app"
