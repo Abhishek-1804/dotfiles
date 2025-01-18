@@ -141,6 +141,7 @@
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
             "/Applications/Docker.app"
+            "/Applications/iMovie.app"
             "/System/Applications/iPhone Mirroring.app"
             "${pkgs.zoom-us}/Applications/zoom.us.app"
           ];
