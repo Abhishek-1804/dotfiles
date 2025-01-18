@@ -48,6 +48,7 @@
   pkgs.fastfetch
   pkgs.sl
   pkgs.cmatrix
+  pkgs.genact
 
 # Media and Content Tools
   pkgs.ffmpeg
