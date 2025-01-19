@@ -69,6 +69,7 @@
             "notion"
             "surfshark"
             "whatsapp"
+            "cursor"
           ];
 
           onActivation.cleanup = "zap";
