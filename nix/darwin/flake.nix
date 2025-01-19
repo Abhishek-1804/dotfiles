@@ -70,6 +70,7 @@
             "surfshark"
             "whatsapp"
             "cursor"
+            "orbstack"
           ];
 
           onActivation.cleanup = "zap";
