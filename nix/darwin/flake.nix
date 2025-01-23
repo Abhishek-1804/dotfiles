@@ -139,6 +139,7 @@
             "${pkgs.slack}/Applications/Slack.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
+            "/Applications/Cursor.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
