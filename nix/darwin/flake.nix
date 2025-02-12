@@ -83,6 +83,7 @@
             "Microsoft Excel" = 462058435;
             "iMovie" = 408981434;
             "Tap Bot" = 6444782835;
+            "DaVinci Resolve" = 571213070;
           };
 
         };
@@ -121,12 +122,10 @@
         system.defaults = {
           dock.autohide = true;
           dock.persistent-apps = [
-            "System/Applications/Mail.app"
             "System/Applications/Music.app"
             "System/Applications/App Store.app"
             "System/Applications/FaceTime.app"
             "System/Applications/System Settings.app"
-            "System/Applications/Reminders.app"
             "System/Applications/FindMy.app"
             "System/Applications/Messages.app"
             "System/Applications/Passwords.app"
@@ -144,6 +143,7 @@
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
             "/Applications/Docker.app"
+            "/Applications/OrbStack.app"
             "/Applications/iMovie.app"
             "/System/Applications/iPhone Mirroring.app"
             "${pkgs.zoom-us}/Applications/zoom.us.app"
