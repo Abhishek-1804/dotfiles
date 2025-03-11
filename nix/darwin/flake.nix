@@ -94,11 +94,7 @@
 
         # Font config
         fonts.packages = [
-          (pkgs.nerdfonts.override {
-            fonts = [
-              "JetBrainsMono"
-            ];
-          })
+          pkgs.nerd-fonts.jetbrains-mono
         ];
 
         # To find applications installed from nixpkgs in spotlight search
@@ -159,11 +155,7 @@
         };
 
         # Enable sudo auth with touch id
-        security.pam.enableSudoTouchIdAuth = true; 
-
-        # Auto upgrade nix package and the daemon service.
-        services.nix-daemon.enable = true;
-        # nix.package = pkgs.nix;
+        security.pam.services.sudo_local.touchIdAuth = true;
 
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
