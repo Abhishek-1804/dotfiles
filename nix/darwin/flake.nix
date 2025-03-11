@@ -57,6 +57,7 @@
             "luarocks"
             "watch"
             "postgresql@14"
+            "awscli"
 
           ];
 
@@ -71,6 +72,8 @@
             "whatsapp"
             "cursor"
             "orbstack"
+            "nvidia-nsight-systems"
+            "clipbook"
           ];
 
           onActivation.cleanup = "zap";
@@ -81,6 +84,7 @@
             "Amphetamine" = 937984704;
             "Microsoft Word" = 462054704;
             "Microsoft Excel" = 462058435;
+            "Microsoft PowerPoint" = 462062816;
             "iMovie" = 408981434;
             "Tap Bot" = 6444782835;
             "DaVinci Resolve" = 571213070;
@@ -144,7 +148,7 @@
             "${pkgs.utm}/Applications/UTM.app"
             "/Applications/Docker.app"
             "/Applications/OrbStack.app"
-            "/Applications/iMovie.app"
+            "/Applications/DaVinci Resolve.app"
             "/System/Applications/iPhone Mirroring.app"
             "${pkgs.zoom-us}/Applications/zoom.us.app"
           ];
