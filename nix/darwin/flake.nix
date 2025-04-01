@@ -39,6 +39,7 @@
           pkgs.pgadmin4
           pkgs.vscode
           pkgs.slack
+          pkgs.windsurf
         ];
 
         # Import service configs
@@ -58,7 +59,6 @@
             "watch"
             "postgresql@14"
             "awscli"
-
           ];
 
           casks = [
@@ -70,9 +70,7 @@
             "notion"
             "surfshark"
             "whatsapp"
-            "cursor"
             "orbstack"
-            "nvidia-nsight-systems"
             "clipbook"
           ];
 
@@ -138,7 +136,7 @@
             "${pkgs.slack}/Applications/Slack.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
-            "/Applications/Cursor.app"
+            "${pkgs.windsurf}/Applications/Windsurf.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
