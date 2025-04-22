@@ -31,7 +31,6 @@
           pkgs.mas
 
           # GUI applications
-          pkgs.zoom-us
           pkgs.arc-browser
           pkgs.raycast
           pkgs.utm
@@ -71,7 +70,7 @@
             "surfshark"
             "whatsapp"
             "orbstack"
-            "clipbook"
+            "zoom"
           ];
 
           onActivation.cleanup = "zap";
@@ -144,7 +143,7 @@
             "/Applications/OrbStack.app"
             "/Applications/DaVinci Resolve.app"
             "/System/Applications/iPhone Mirroring.app"
-            "${pkgs.zoom-us}/Applications/zoom.us.app"
+            "/System/Applications/zoom.us.app"
           ];
           loginwindow.GuestEnabled = false;
           finder.FXPreferredViewStyle = "clmv";
