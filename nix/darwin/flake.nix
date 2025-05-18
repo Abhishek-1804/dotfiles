@@ -58,9 +58,11 @@
             "watch"
             "postgresql@14"
             "awscli"
+            "aws-nuke"
           ];
 
           casks = [
+            "battery"
             "chatgpt"
             "google-drive"
             "docker"
@@ -71,6 +73,7 @@
             "whatsapp"
             "orbstack"
             "zoom"
+            "cursor"
           ];
 
           onActivation.cleanup = "zap";
@@ -136,6 +139,7 @@
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
             "${pkgs.windsurf}/Applications/Windsurf.app"
+            "/Applications/Cursor.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
             "${pkgs.utm}/Applications/UTM.app"
@@ -143,7 +147,7 @@
             "/Applications/OrbStack.app"
             "/Applications/DaVinci Resolve.app"
             "/System/Applications/iPhone Mirroring.app"
-            "/System/Applications/zoom.us.app"
+            "/Applications/zoom.us.app"
           ];
           loginwindow.GuestEnabled = false;
           finder.FXPreferredViewStyle = "clmv";
