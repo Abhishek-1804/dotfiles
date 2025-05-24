@@ -12,7 +12,7 @@
   home.stateVersion = "24.05"; # Update to match the Nixpkgs version you're using
 
   # Import system-level packages from shared/modules/packages.nix
-  home.packages = pkgs.callPackage ../../../shared/modules/essential.nix {} ++ [
+  home.packages = pkgs.callPackage ../../../shared/modules/essentials.nix {} ++ [
     # Add user-level packages here
     pkgs.btop
   ];
