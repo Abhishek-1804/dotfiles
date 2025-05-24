@@ -11,26 +11,6 @@
   home.packages = [
   ];
 
-# Add the LazyVim installation script here
-  home.activation.installLazyVim = ''
-    echo "Starting LazyVim installation..."
-    NVIM_CONFIG="${config.xdg.configHome}/nvim"
-
-# Check if the ~/.config/nvim directory does NOT exist
-    if [ ! -d "$NVIM_CONFIG" ]; then
-      echo "No nvim directory found. Setting up LazyVim..."
-
-        rm -rf "$NVIM_CONFIG"
-        mkdir -p "$NVIM_CONFIG"
-        ${pkgs.git}/bin/git clone https://github.com/LazyVim/starter "$NVIM_CONFIG"
-        rm -rf "$NVIM_CONFIG/.git"
-
-        echo "LazyVim installed successfully!"
-    else
-      echo "nvim directory already exists, skipping LazyVim installation"
-        fi
-        '';
-
 # Manage files
   home.file = {
     ".config/nvim/lua/config/autocmds.lua" = {
