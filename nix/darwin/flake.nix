@@ -24,16 +24,11 @@
         environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
           # CLI tools
           pkgs.mkalias
-          pkgs.lynx
           pkgs.openssl
-          pkgs.yt-dlp
-          pkgs.transmission_4
           pkgs.mas
 
           # GUI applications
-          pkgs.arc-browser
-          pkgs.raycast
-          pkgs.pgadmin4
+          
         ];
 
         # Homebrew stuff
@@ -45,7 +40,10 @@
             "gnu-sed"
             "llvm@17"
             "luarocks"
+            "yt-dlp"
             "watch"
+            "lynx"
+            "transmission-cli"
             "postgresql@14"
             "awscli"
           ];
@@ -55,9 +53,11 @@
             "chatgpt"
             "google-drive"
             "docker"
+            "raycast"
+            "arc"
             "utm"
             "postman"
-            "vscode"
+            "vscodium"
             "slack"
             "windsurf"
             "ghostty"
@@ -124,19 +124,19 @@
             "System/Applications/Messages.app"
             "System/Applications/Passwords.app"
             "/Applications/Safari.app"
-            "${pkgs.arc-browser}/Applications/Arc.app"
+            "/Applications/Arc.app"
             "/Applications/Google Chrome.app"
             "/Applications/WhatsApp.app"
             "/Applications/ChatGPT.app"
             "/Applications/Discord.app"
-            "${pkgs.slack}/Applications/Slack.app"
+            "/Applications/Slack.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
-            "${pkgs.windsurf}/Applications/Windsurf.app"
+            "/Applications/Windsurf.app"
             "/Applications/Cursor.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
-            "${pkgs.utm}/Applications/UTM.app"
+            "/Applications/UTM.app"
             "/Applications/Docker.app"
             "/Applications/OrbStack.app"
             "/Applications/DaVinci Resolve.app"
@@ -168,6 +168,9 @@
 
         # The platform the configuration will be used on.
         nixpkgs.hostPlatform = "aarch64-darwin";
+
+        # Set the primary user - REQUIRED for user-specific settings
+        system.primaryUser = "abhishekdeshpande";
 
         # Users
         users.users.abhishekdeshpande.home = "/Users/abhishekdeshpande";
