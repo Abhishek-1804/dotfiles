@@ -1,60 +1,54 @@
 { pkgs, ... }:
 
-[
-# Programming Languages and Development Tools
-  pkgs.git
-  pkgs.nodejs
-  pkgs.python3
-  pkgs.python312Packages.tkinter
-  pkgs.rustc
-  pkgs.cargo
-  pkgs.go
-  pkgs.jdk
-  pkgs.bun
-  pkgs.pnpm
-  pkgs.yarn
-  pkgs.deno
-  pkgs.scc
-  pkgs.gcc
-  pkgs.cmake
-  pkgs.libuv
-  pkgs.zlib
+let
+  # import the essentials list
+  essentials = import ./essentials.nix { inherit pkgs; };
+in
 
-# Networking and Security Tools
-  pkgs.nginx
-  pkgs.nmap
-  pkgs.hping
-  pkgs.gping
-  pkgs.hashcat
-  pkgs.speedtest-rs
-  pkgs.aria2
-  pkgs.rsync
+  essentials ++ [
+    # Programming Languages and Development Tools
+    pkgs.jdk
+    pkgs.bun
+    pkgs.pnpm
+    pkgs.yarn
+    pkgs.deno
+    ## super-fast source code line counter
+    pkgs.scc
+    ## general-purpose lossless data-compression library
+    pkgs.zlib
 
-# CLI Utilities and System Tools
-  pkgs.bat
-  pkgs.fd
-  pkgs.ripgrep
-  pkgs.fdupes
-  pkgs.fzf
-  pkgs.tree
-  pkgs.stow
-  pkgs.lazygit
-  pkgs.lazydocker
-  pkgs.tlrc
-  pkgs.hwloc
-  pkgs.yazi
+    # Networking and Security Tools
+    pkgs.nginx
+    pkgs.nmap
+    ## TCP/IP packet crafter and network testing tool
+    pkgs.hping
+    ## interactive ping utility with real-time graphs
+    pkgs.gping
+    ## GPU-accelerated password recovery and cracking tool
+    pkgs.hashcat
+    pkgs.speedtest-rs
 
-# Random Cool Tools
-  pkgs.fastfetch
-  pkgs.sl
-  pkgs.cmatrix
-  pkgs.genact
+    # CLI Utilities and System Tools
+    pkgs.fdupes
+    pkgs.stow
+    ## hardware topology discovery and CPU/memory mapper
+    pkgs.hwloc
 
-# Media and Content Tools
-  pkgs.ffmpeg
-  pkgs.hugo
+    # Random Cool Tools
+    pkgs.fastfetch
+    pkgs.sl
+    pkgs.cmatrix
+    ## generate fake activity logs for demos or testing
+    pkgs.genact
+    ## terminal session recorder for sharing CLI workflows
+    pkgs.asciinema
 
-# Specialized Tools
-  pkgs.ollama
+    # Media and Content Tools
+    pkgs.ffmpeg
+    pkgs.hugo
+
+    # Specialized Tools
+    pkgs.ollama
+    ## fabric-ai   — AI-powered Fabric management and deployment toolkit
+    pkgs.fabric-ai
   ]
-
