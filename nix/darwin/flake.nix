@@ -41,11 +41,6 @@
           pkgs.windsurf
         ];
 
-        # Import service configs
-        imports = [
-          # ../shared/modules/services/postgresql.nix
-        ];
-
         # Homebrew stuff
         homebrew = {
           enable = true;
@@ -58,7 +53,6 @@
             "watch"
             "postgresql@14"
             "awscli"
-            "aws-nuke"
           ];
 
           casks = [
@@ -181,8 +175,8 @@
     in
       {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Abhisheks-MacBook-Air
-      darwinConfigurations."Abhisheks-MacBook-Air" = nix-darwin.lib.darwinSystem {
+      # $ darwin-rebuild build --flake .#(profile-name)
+      darwinConfigurations."Personal" = nix-darwin.lib.darwinSystem {
         modules = [ 
           configuration 
           nix-homebrew.darwinModules.nix-homebrew
@@ -203,6 +197,6 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Abhisheks-MacBook-Air".pkgs;
+      darwinPackages = self.darwinConfigurations."Personal".pkgs;
     };
 }
