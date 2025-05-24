@@ -49,6 +49,6 @@ in
 
     # Specialized Tools
     pkgs.ollama
-    ## fabric-ai   — AI-powered Fabric management and deployment toolkit
+    ## AI-powered Fabric management and deployment toolkit
     pkgs.fabric-ai
   ]
