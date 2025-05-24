@@ -33,12 +33,7 @@
           # GUI applications
           pkgs.arc-browser
           pkgs.raycast
-          pkgs.utm
-          pkgs.postman
           pkgs.pgadmin4
-          pkgs.vscode
-          pkgs.slack
-          pkgs.windsurf
         ];
 
         # Homebrew stuff
@@ -60,6 +55,11 @@
             "chatgpt"
             "google-drive"
             "docker"
+            "utm"
+            "postman"
+            "vscode"
+            "slack"
+            "windsurf"
             "ghostty"
             "discord"
             "notion"
