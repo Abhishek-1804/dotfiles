@@ -28,7 +28,7 @@
           pkgs.mas
 
           # GUI applications
-          
+
         ];
 
         # Homebrew stuff
@@ -179,27 +179,30 @@
       {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#(profile-name)
-      darwinConfigurations."Personal" = nix-darwin.lib.darwinSystem {
-        modules = [ 
-          configuration 
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = true;
-              user = "abhishekdeshpande";
-              autoMigrate = true;
-            };
-          }
-          home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.abhishekdeshpande = import ./home.nix;
-          }
-        ];
-      };
+      darwinConfigurations = 
+        { 
+          "Personal" = nix-darwin.lib.darwinSystem {
+            modules = [ 
+              configuration 
+              nix-homebrew.darwinModules.nix-homebrew
+              {
+                nix-homebrew = {
+                  enable = true;
+                  enableRosetta = true;
+                  user = "abhishekdeshpande";
+                  autoMigrate = true;
+                };
+              }
+              home-manager.darwinModules.home-manager {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.abhishekdeshpande = import ./profiles/personal/home.nix;
+              }
+            ];
+          };
+        };
 
-      # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Personal".pkgs;
+        # Expose the package set, including overlays, for convenience.
+        darwinPackages = self.darwinConfigurations."Personal".pkgs;
     };
 }

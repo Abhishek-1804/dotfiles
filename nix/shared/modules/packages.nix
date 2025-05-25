@@ -29,7 +29,6 @@ in
     pkgs.speedtest-rs
 
     # CLI Utilities and System Tools
-    pkgs.fdupes
     pkgs.stow
     ## hardware topology discovery and CPU/memory mapper
     pkgs.hwloc
