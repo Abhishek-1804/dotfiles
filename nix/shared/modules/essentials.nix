@@ -19,6 +19,7 @@
   pkgs.rsync
 
   # CLI Utilities and System Tools
+  pkgs.fdupes
   pkgs.bat
   ## simple, fast, user-friendly alternative to `find`
   pkgs.fd
