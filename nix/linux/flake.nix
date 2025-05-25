@@ -10,10 +10,10 @@
   outputs = { self, nixpkgs, home-manager }: {
     homeConfigurations = {
       # Full profile with all packages
-      everything = home-manager.lib.homeManagerConfiguration {
+      personal = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          ./profiles/everything/home.nix
+          ./profiles/personal/home.nix
         ];
       };
 
