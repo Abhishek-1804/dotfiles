@@ -54,7 +54,6 @@
             "google-drive"
             "docker"
             "raycast"
-            "arc"
             "utm"
             "postman"
             "vscodium"
@@ -64,10 +63,13 @@
             "discord"
             "notion"
             "surfshark"
+            "flux"
+            "vivaldi"
             "whatsapp"
             "orbstack"
             "zoom"
             "cursor"
+            "logi-options+"
           ];
 
           onActivation.cleanup = "zap";
@@ -124,7 +126,7 @@
             "System/Applications/Messages.app"
             "System/Applications/Passwords.app"
             "/Applications/Safari.app"
-            "/Applications/Arc.app"
+            "/Applications/Vivaldi.app"
             "/Applications/Google Chrome.app"
             "/Applications/WhatsApp.app"
             "/Applications/ChatGPT.app"
