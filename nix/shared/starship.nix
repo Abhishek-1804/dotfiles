@@ -2,7 +2,6 @@
 
 {
   enable = true;
-  enableZshIntegration = true;
   settings = builtins.fromTOML ''
       format = """
       [](surface0)\
