@@ -151,6 +151,9 @@
           NSGlobalDomain.KeyRepeat = 2;
         };
 
+        system.keyboard.enableKeyMapping = true;
+        system.keyboard.remapCapsLockToControl = true;
+
         # Enable sudo auth with touch id
         security.pam.services.sudo_local.touchIdAuth = true;
 
