@@ -11,7 +11,7 @@
     homeConfigurations = {
       # Full profile with all packages
       personal = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import nixpkgs { system = builtins.currentSystem; };
         modules = [
           ./profiles/personal/home.nix
         ];
@@ -19,7 +19,7 @@
 
       # Minimal profile with essential packages only
       minimal = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import nixpkgs { system = builtins.currentSystem; };
         modules = [
           ./profiles/minimal/home.nix
         ];
