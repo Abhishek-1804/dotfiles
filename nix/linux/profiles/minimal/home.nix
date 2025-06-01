@@ -19,6 +19,10 @@
 
   # Manage dotfiles and configurations
   home.file = {
+    ".config/ghostty/config" = {
+      source = ../../../../.config/ghostty/config;
+      force = true;
+    };
     ".config/nvim/lua/config/autocmds.lua" = {
       source = ../../../../.config/nvim/lua/config/autocmds.lua;
       force = true;
@@ -39,20 +43,12 @@
       source = ../../../../.config/nvim/lua/plugins/colorscheme.lua;
       force = true;
     };
-    ".config/nvim/lua/plugins/genAI.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/genAI.lua;
-      force = true;
-    };
-    ".config/nvim/lua/plugins/leetcode.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/leetcode.lua;
-      force = true;
-    };
     ".config/nvim/lua/plugins/vimTmuxNav.lua" = {
       source = ../../../../.config/nvim/lua/plugins/vimTmuxNav.lua;
       force = true;
     };
-    ".config/ghostty/config" = {
-      source = ../../../../.config/ghostty/config;
+    ".config/nvim/lua/plugins/nvimZellijNav.lua" = {
+      source = ../../../../.config/nvim/lua/plugins/nvimZellijNav.lua;
       force = true;
     };
   };
@@ -62,6 +58,7 @@
     zsh = (import ../../../shared/zsh.nix { inherit config pkgs; });
     vim = (import ../../../shared/vim.nix { inherit config pkgs; });
     tmux = (import ../../../shared/tmux.nix { inherit config pkgs; });
+    zellij = (import ../../../shared/zellij.nix { inherit config pkgs; });
     starship = (import ../../../shared/starship.nix { inherit config pkgs; });
     atuin = (import ../../../shared/atuin.nix { inherit config pkgs; });
   };
