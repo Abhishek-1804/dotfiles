@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
-  home.username = "abhishekdeshpande";
-  home.homeDirectory = "/Users/abhishekdeshpande";
   home.stateVersion = "24.05";
 
   # Packages to install
