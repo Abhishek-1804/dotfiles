@@ -7,6 +7,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  # Periodically 'nix store optimise' and 'nix-collect-garbage -d'
+  # Also 'nix flake update'
+
   outputs = { self, nixpkgs, home-manager }: {
     homeConfigurations = {
       # Full profile with all packages
