@@ -157,6 +157,9 @@
         # Enable sudo auth with touch id
         security.pam.services.sudo_local.touchIdAuth = true;
 
+        # Periodically 'nix store optimise' and 'nix-collect-garbage -d'
+        # Also 'nix flake update'
+
         # Necessary for using flakes on this system.
         nix.settings.experimental-features = "nix-command flakes";
 
