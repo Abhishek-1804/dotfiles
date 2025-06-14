@@ -42,10 +42,6 @@
       source = ../../../../.config/nvim/lua/plugins/colorscheme.lua;
       force = true;
     };
-    ".config/nvim/lua/plugins/nvimZellijNav.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/nvimZellijNav.lua;
-      force = true;
-    };
   };
 
   programs = {

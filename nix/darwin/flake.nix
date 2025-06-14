@@ -49,7 +49,6 @@
           ];
 
           casks = [
-            "battery"
             "chatgpt"
             "google-drive"
             "docker"
@@ -61,6 +60,7 @@
             "windsurf"
             "ghostty"
             "discord"
+            "vlc"
             "notion"
             "surfshark"
             "flux"
@@ -127,23 +127,18 @@
             "System/Applications/Passwords.app"
             "/Applications/Safari.app"
             "/Applications/Vivaldi.app"
-            "/Applications/Google Chrome.app"
             "/Applications/WhatsApp.app"
             "/Applications/ChatGPT.app"
             "/Applications/Discord.app"
-            "/Applications/Slack.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
             "/Applications/Windsurf.app"
             "/Applications/Cursor.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
-            "/Applications/UTM.app"
-            "/Applications/Docker.app"
             "/Applications/OrbStack.app"
-            "/Applications/DaVinci Resolve.app"
             "/System/Applications/iPhone Mirroring.app"
-            "/Applications/zoom.us.app"
+            "/System/Applications/TV.app"
           ];
           loginwindow.GuestEnabled = false;
           finder.FXPreferredViewStyle = "clmv";
