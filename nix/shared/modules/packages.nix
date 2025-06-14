@@ -44,6 +44,7 @@ in
 
     # Media and Content Tools
     pkgs.ffmpeg
+    pkgs.python312Packages.ffmpeg-progress-yield
     pkgs.hugo
 
     # Specialized Tools
