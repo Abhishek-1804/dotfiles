@@ -12,26 +12,21 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager}:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
       configuration = { pkgs, config, ... }: {
 
-        # Allowing proprietary software download
+        # Allow proprietary software
         nixpkgs.config.allowUnfree = true;
 
-        # List packages installed in system profile. To search by name, run:
-        # $ nix-env -qaP | grep wget
+        # System-wide packages (keep lean; prefer HM for user-scoped CLIs)
         environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
-          # CLI tools
           pkgs.mkalias
           pkgs.openssl
           pkgs.mas
-
-          # GUI applications
-
         ];
 
-        # Homebrew stuff
+        # Homebrew
         homebrew = {
           enable = true;
 
@@ -43,6 +38,7 @@
             "yt-dlp"
             "watch"
             "lynx"
+            "gemini-cli"
             "transmission-cli"
             "postgresql@14"
             "awscli"
@@ -51,7 +47,6 @@
           casks = [
             "chatgpt"
             "google-drive"
-            "docker"
             "steam"
             "raycast"
             "utm"
@@ -59,6 +54,7 @@
             "postman"
             "windsurf"
             "vscodium"
+            "claude-code"
             "slack"
             "ghostty"
             "discord"
@@ -74,7 +70,7 @@
             "logi-options+"
           ];
 
-          onActivation.cleanup = "zap";
+          onActivation.cleanup = "uninstall";
           onActivation.autoUpdate = true;
           onActivation.upgrade = true;
 
@@ -86,37 +82,36 @@
             "iMovie" = 408981434;
             "Tap Bot" = 6444782835;
             "DaVinci Resolve" = 571213070;
+            "Perplexity: Ask Anything" = 6714467650;
           };
-
         };
 
-        # Font config
+        # Fonts
         fonts.packages = [
           pkgs.nerd-fonts.jetbrains-mono
         ];
 
-        # To find applications installed from nixpkgs in spotlight search
+        # Spotlightable Nix apps via aliases
         system.activationScripts.applications.text = let
           env = pkgs.buildEnv {
             name = "system-applications";
             paths = config.environment.systemPackages;
             pathsToLink = "/Applications";
           };
-        in
-          pkgs.lib.mkForce ''
-        # Set up applications.
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read -r src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
+        in pkgs.lib.mkForce ''
+          # Set up applications.
+          echo "setting up /Applications..." >&2
+          rm -rf /Applications/Nix\ Apps
+          mkdir -p /Applications/Nix\ Apps
+          find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+          while read -r src; do
+            app_name=$(basename "$src")
+            echo "copying $src" >&2
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
+          done
           '';
 
-        # Mac system default settings
+        # macOS defaults
         system.defaults = {
           dock.autohide = true;
           dock.persistent-apps = [
@@ -151,63 +146,77 @@
         system.keyboard.enableKeyMapping = true;
         system.keyboard.remapCapsLockToControl = true;
 
-        # Enable sudo auth with touch id
+        # Touch ID for sudo
         security.pam.services.sudo_local.touchIdAuth = true;
 
-        # Periodically 'nix store optimise' and 'nix-collect-garbage -d'
-        # Also 'nix flake update'
+        # nix-darwin now manages nix-daemon when nix.enable = true
+        nix.enable = true;
 
-        # Necessary for using flakes on this system.
-        nix.settings.experimental-features = "nix-command flakes";
+        nix.settings = {
+          experimental-features = [ "nix-command" "flakes" ];
+          trusted-users = [ "root" "abhishekdeshpande" ];
+          substituters = [
+            "https://cache.nixos.org"
+            "https://nix-community.cachix.org"
+          ];
+          trusted-public-keys = [
+            "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          ];
+        };
 
-        # Create /etc/zshrc that loads the nix-darwin environment.
-        programs.zsh.enable = true;  # default shell on catalina
-        # programs.fish.enable = true;
+        nix.gc = {
+          automatic = true;
+          options = "--delete-older-than 7d";
+        };
 
-        # Set Git commit hash for darwin-version.
+        nix.optimise.automatic = true;
+
+        # Shells
+        programs.zsh.enable = true;  # create /etc/zshrc that sources nix-darwin env
+        users.users.abhishekdeshpande.shell = pkgs.zsh;
+
+        # Version stamp for darwin-version
         system.configurationRevision = self.rev or self.dirtyRev or null;
 
-        # Used for backwards compatibility, please read the changelog before changing.
-        # $ darwin-rebuild changelog
+        # Darwin module state version
         system.stateVersion = 5;
 
-        # The platform the configuration will be used on.
+        # Platform
         nixpkgs.hostPlatform = "aarch64-darwin";
 
-        # Set the primary user - REQUIRED for user-specific settings
+        # Primary user
         system.primaryUser = "abhishekdeshpande";
 
-        # Users
+        # User home
         users.users.abhishekdeshpande.home = "/Users/abhishekdeshpande";
       };
     in
       {
-      # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#(profile-name)
-      darwinConfigurations = 
-        { 
-          "Personal" = nix-darwin.lib.darwinSystem {
-            modules = [ 
-              configuration 
-              nix-homebrew.darwinModules.nix-homebrew
-              {
-                nix-homebrew = {
-                  enable = true;
-                  enableRosetta = true;
-                  user = "abhishekdeshpande";
-                  autoMigrate = true;
-                };
-              }
-              home-manager.darwinModules.home-manager {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.abhishekdeshpande = import ./profiles/personal/home.nix;
-              }
-            ];
-          };
+      # Build with:
+      # darwin-rebuild build --flake .#Personal
+      darwinConfigurations = {
+        "Personal" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                user = "abhishekdeshpande";
+                autoMigrate = true;
+              };
+            }
+            home-manager.darwinModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.abhishekdeshpande = import ./profiles/personal/home.nix;
+            }
+          ];
         };
+      };
 
-        # Expose the package set, including overlays, for convenience.
-        darwinPackages = self.darwinConfigurations."Personal".pkgs;
+      # Expose package set for convenience
+      darwinPackages = self.darwinConfigurations."Personal".pkgs;
     };
 }
