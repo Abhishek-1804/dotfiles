@@ -43,6 +43,7 @@
             "yt-dlp"
             "watch"
             "lynx"
+            "gemini-cli"
             "transmission-cli"
             "postgresql@14"
             "awscli"
@@ -51,7 +52,6 @@
           casks = [
             "chatgpt"
             "google-drive"
-            "docker"
             "steam"
             "raycast"
             "utm"
@@ -59,6 +59,7 @@
             "postman"
             "windsurf"
             "vscodium"
+            "claude-code"
             "slack"
             "ghostty"
             "discord"
@@ -74,7 +75,7 @@
             "logi-options+"
           ];
 
-          onActivation.cleanup = "zap";
+          onActivation.cleanup = "uninstall";
           onActivation.autoUpdate = true;
           onActivation.upgrade = true;
 
@@ -86,6 +87,7 @@
             "iMovie" = 408981434;
             "Tap Bot" = 6444782835;
             "DaVinci Resolve" = 571213070;
+            "Perplexity: Ask Anything" = 6714467650;
           };
 
         };
