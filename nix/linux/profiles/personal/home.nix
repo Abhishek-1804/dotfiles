@@ -38,10 +38,6 @@
       source = ../../../../.config/nvim/lua/config/options.lua;
       force = true;
     };
-    ".config/nvim/lua/plugins/colorscheme.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/colorscheme.lua;
-      force = true;
-    };
   };
 
   programs = {

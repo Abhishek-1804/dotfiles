@@ -46,8 +46,11 @@
 
           casks = [
             "chatgpt"
+            "boosteroid"
             "google-drive"
+            "google-chrome"
             "steam"
+            "android-studio"
             "raycast"
             "utm"
             "plex-media-server"
@@ -61,7 +64,6 @@
             "vlc"
             "notion"
             "surfshark"
-            "flux"
             "vivaldi"
             "whatsapp"
             "orbstack"
@@ -82,7 +84,6 @@
             "iMovie" = 408981434;
             "Tap Bot" = 6444782835;
             "DaVinci Resolve" = 571213070;
-            "Perplexity: Ask Anything" = 6714467650;
           };
         };
 
@@ -126,14 +127,10 @@
             "/Applications/Vivaldi.app"
             "/Applications/WhatsApp.app"
             "/Applications/ChatGPT.app"
-            "/Applications/Discord.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
-            "/Applications/Windsurf.app"
-            "/Applications/Cursor.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/Applications/Surfshark.app"
-            "/Applications/OrbStack.app"
             "/System/Applications/iPhone Mirroring.app"
             "/System/Applications/TV.app"
           ];
