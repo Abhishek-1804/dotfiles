@@ -19,7 +19,6 @@
         # Allow proprietary software
         nixpkgs.config.allowUnfree = true;
 
-        # System-wide packages (keep lean; prefer HM for user-scoped CLIs)
         environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
           pkgs.mkalias
           pkgs.openssl
