@@ -13,7 +13,7 @@
     home.packages = pkgs.callPackage ../../../shared/modules/packages.nix {} ++ [
 # Add user-level packages here
     pkgs.btop
-      pkgs.hollywood
+    pkgs.hollywood
     ];
 
 # Manage dotfiles and configurations
