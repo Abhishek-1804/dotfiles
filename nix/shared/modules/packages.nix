@@ -2,6 +2,7 @@
 
 let
 # import the essentials list
+# These packages mainly define CLI Utilities. GUI packages should be placed in home configs
 essentials = import ./essentials.nix { inherit pkgs; };
 in
 
@@ -24,18 +25,24 @@ essentials ++ [
 # Containerization
   pkgs.kubectl
   pkgs.minikube
+  pkgs.colima
+  pkgs.podman
+  pkgs.docker
+  pkgs.docker-compose
+  pkgs.docker-buildx
+  pkgs.docker-credential-helpers
 
 # Networking and Security Tools
   pkgs.nginx
   pkgs.nmap
   pkgs.ngrok
+  pkgs.speedtest-rs
 ## TCP/IP packet crafter and network testing tool
   pkgs.hping
 ## interactive ping utility with real-time graphs
   pkgs.gping
 ## GPU-accelerated password recovery and cracking tool
   pkgs.hashcat
-  pkgs.speedtest-rs
 
 # CLI Utilities and System Tools
   pkgs.stow
