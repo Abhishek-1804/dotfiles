@@ -161,14 +161,7 @@
         ];
       };
 
-# Occasionally, manually run 
-## 'nix flake update'          # [Updates flake inputs like nixpkgs to latest versions]
-## 'nix-collect-garbage -d'    # [Deletes old generations + removes unreachable store paths - most aggressive cleanup]
-## 'nix store optimise'        # [Deduplicates identical files using hard links to save 25-35% disk space]
-## 'nix store verify'          # [Verifies store path integrity and cryptographic signatures]
-## 'nix doctor'                # [Runs system health checks with PASS/FAIL diagnostics]
-
-      nix.gc = {
+e     nix.gc = {
         automatic = true;
         options = "--delete-older-than 7d";
       };
