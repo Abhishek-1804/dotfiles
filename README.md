@@ -24,14 +24,15 @@ It manages your shell, editors, terminal, packages, and more—declaratively and
 - Administrative access
 
 To enable flakes:
-`mkdir -p ~/.config/nix`
-`echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf`
+
+- `mkdir -p ~/.config/nix`
+- `echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf`
 
 ---
 
 ### 2. Clone the Repository
 
-`git clone https://github.com/<yourusername>/dotfiles.git ~/dotfiles`
+`git clone https://github.com/Abhishek-1804/dotfiles.git ~/dotfiles`
 
 ---
 

@@ -25,12 +25,8 @@ essentials ++ [
 # Containerization
   pkgs.kubectl
   pkgs.minikube
-  pkgs.colima
   pkgs.podman
-  pkgs.docker
-  pkgs.docker-compose
-  pkgs.docker-buildx
-  pkgs.docker-credential-helpers
+  pkgs.podman-compose
 
 # Networking and Security Tools
   pkgs.nginx
@@ -62,6 +58,9 @@ essentials ++ [
   pkgs.ffmpeg
   pkgs.python312Packages.ffmpeg-progress-yield
   pkgs.hugo
+
+# Utilities
+  pkgs.tldr
 
 # Specialized Tools
   pkgs.ollama

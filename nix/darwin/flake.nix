@@ -41,6 +41,7 @@
         ];
 
         casks = [
+        "obs"
           "chatgpt"
             "claude"
             "boosteroid"
@@ -56,7 +57,6 @@
             "microsoft-teams"
             "raycast"
             "dockey"
-            "plex-media-server"
             "postman"
             "lm-studio"
             "slack"
@@ -161,7 +161,7 @@
         ];
       };
 
-e     nix.gc = {
+      nix.gc = {
         automatic = true;
         options = "--delete-older-than 7d";
       };
