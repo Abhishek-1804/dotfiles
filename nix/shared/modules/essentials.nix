@@ -5,7 +5,7 @@
   pkgs.git
   pkgs.nodejs
   pkgs.python3
-  pkgs.pyenv
+  pkgs.uv
   pkgs.rustc
   pkgs.cargo
   pkgs.go
@@ -14,12 +14,12 @@
   ## cross-platform asynchronous I/O & event loop library
   pkgs.libuv
 
-# Containerization
-  pkgs.colima
-  pkgs.docker
-  pkgs.docker-compose
-  pkgs.docker-buildx
-  pkgs.docker-credential-helpers
+# # Containerization
+#   pkgs.colima
+#   pkgs.docker
+#   pkgs.docker-compose
+#   pkgs.docker-buildx
+#   pkgs.docker-credential-helpers
 
   # Networking and Security Tools
   ## multi-protocol, high-speed command-line downloader
@@ -41,5 +41,4 @@
   pkgs.lazydocker
   pkgs.tlrc
   pkgs.yazi
-
 ]

@@ -123,7 +123,7 @@ Occasionally, manually run these maintenance commands:
   Verifies store path integrity and cryptographic signatures
 
 - **Health check:**
-  `nix doctor`
+  `nix config check`
   Runs system health checks with PASS/FAIL diagnostics
 
 ## Troubleshooting & Tips

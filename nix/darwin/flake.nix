@@ -48,6 +48,7 @@
             "container"
             "orbstack"
             "google-drive"
+            "stats"
             "webstorm"
             "intellij-idea"
             "windsurf"
