@@ -14,9 +14,6 @@ essentials ++ [
   pkgs.yarn
   pkgs.deno
   pkgs.gradle_8
-## super-fast source code line counter
-  pkgs.scc
-## general-purpose lossless data-compression library
   pkgs.zlib
 
 # Cloud
@@ -31,39 +28,41 @@ essentials ++ [
 # Networking and Security Tools
   pkgs.nginx
   pkgs.nmap
+  pkgs.aria2
+  pkgs.rsync
   pkgs.ngrok
   pkgs.speedtest-rs
-## TCP/IP packet crafter and network testing tool
   pkgs.hping
-## interactive ping utility with real-time graphs
   pkgs.gping
-## GPU-accelerated password recovery and cracking tool
   pkgs.hashcat
 
 # CLI Utilities and System Tools
   pkgs.stow
-## hardware topology discovery and CPU/memory mapper
   pkgs.hwloc
+  pkgs.eza
 
 # Random Cool Tools
   pkgs.fastfetch
   pkgs.sl
+  pkgs.scc
   pkgs.cmatrix
-## generate fake activity logs for demos or testing
+  pkgs.cbonsai
+  pkgs.asciiquarium
   pkgs.genact
-## terminal session recorder for sharing CLI workflows
   pkgs.asciinema
+  pkgs.lolcat
 
 # Media and Content Tools
   pkgs.ffmpeg
   pkgs.python312Packages.ffmpeg-progress-yield
   pkgs.hugo
+  pkgs.croc
 
 # Utilities
   pkgs.tldr
 
-# Specialized Tools
+# AI Tools
   pkgs.ollama
-## AI-powered Fabric management and deployment toolkit
-  pkgs.fabric-ai
-  ]
+  pkgs.gemini-cli
+  pkgs.opencode
+]
