@@ -33,6 +33,10 @@
       source = ../../../../.config/nvim/lua/plugins/vimtmuxnav.lua;
       force = true;
     };
+    ".config/nvim/lua/plugins/opencode.lua" = {
+      source = ../../../../.config/nvim/lua/plugins/opencode.lua;
+      force = true;
+    };
   };
 
   programs = {
