@@ -3,6 +3,7 @@
 [
   # Programming Languages and Development Tools
   pkgs.git
+  pkgs.gh
   pkgs.nodejs
   pkgs.python3
   pkgs.uv
