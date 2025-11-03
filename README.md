@@ -119,7 +119,7 @@ Occasionally, manually run these maintenance commands:
   Deduplicates identical files using hard links to save 25-35% disk space
 
 - **Verify integrity:**
-  `nix store verify`
+  `nix store verify --all`
   Verifies store path integrity and cryptographic signatures
 
 - **Health check:**

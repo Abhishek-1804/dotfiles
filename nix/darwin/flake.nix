@@ -33,6 +33,8 @@
           "gnu-sed"
             "llvm@17"
             "luarocks"
+            "container-compose"
+            "lazycontainer"
             "transmission-cli"
             "watch"
             "yt-dlp"
