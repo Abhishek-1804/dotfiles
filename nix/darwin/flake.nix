@@ -20,7 +20,7 @@
       nixpkgs.config.allowUnfree = true;
 
       environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
-        pkgs.mkalias
+          pkgs.mkalias
           pkgs.openssl
           pkgs.mas
       ];

@@ -22,7 +22,6 @@
 #   pkgs.docker-credential-helpers
 
   # CLI Utilities and System Tools
-  pkgs.fdupes
   pkgs.bat
   pkgs.fd
   pkgs.duf

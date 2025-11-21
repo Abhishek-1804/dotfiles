@@ -15,37 +15,15 @@
     pkgs.btop
     ];
 
-# Manage dotfiles and configurations
-  home.file = {
-    ".config/ghostty/config" = {
-      source = ../../../../.config/ghostty/config;
-      force = true;
-    };
-    ".config/nvim/lua/config/autocmds.lua" = {
-      source = ../../../../.config/nvim/lua/config/autocmds.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/keymaps.lua" = {
-      source = ../../../../.config/nvim/lua/config/keymaps.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/lazy.lua" = {
-      source = ../../../../.config/nvim/lua/config/lazy.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/options.lua" = {
-      source = ../../../../.config/nvim/lua/config/options.lua;
-      force = true;
-    };
-    ".config/nvim/lua/plugins/vimtmuxnav.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/vimtmuxnav.lua;
-      force = true;
-    };
-    ".config/nvim/lua/plugins/opencode.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/opencode.lua;
-      force = true;
-    };
-  };
+  # Manage files
+  ## Loop over .config/ files and apply those configs
+  home.file = let
+    configDir = ../../../../.config;
+  in builtins.mapAttrs (name: type: {
+    source = configDir + "/${name}";
+    recursive = type == "directory";
+    force = true;
+  }) (builtins.readDir configDir);
 
   programs = {
     neovim = (import ../../../shared/neovim.nix { inherit config pkgs; });
