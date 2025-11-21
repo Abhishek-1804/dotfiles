@@ -59,6 +59,8 @@ essentials ++ [
   pkgs.croc
 
 # Utilities
+  pkgs.czkawka
+  pkgs.fdupes
   pkgs.tldr
 
 # AI Tools

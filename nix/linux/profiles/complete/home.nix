@@ -24,28 +24,9 @@
       source = ../../../../.config/ghostty/config;
       force = true;
     };
-    ".config/nvim/lua/config/autocmds.lua" = {
-      source = ../../../../.config/nvim/lua/config/autocmds.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/keymaps.lua" = {
-      source = ../../../../.config/nvim/lua/config/keymaps.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/lazy.lua" = {
-      source = ../../../../.config/nvim/lua/config/lazy.lua;
-      force = true;
-    };
-    ".config/nvim/lua/config/options.lua" = {
-      source = ../../../../.config/nvim/lua/config/options.lua;
-      force = true;
-    };
-    ".config/nvim/lua/plugins/vimtmuxnav.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/vimtmuxnav.lua;
-      force = true;
-    };
-    ".config/nvim/lua/plugins/opencode.lua" = {
-      source = ../../../../.config/nvim/lua/plugins/opencode.lua;
+    ".config/nvim" = {
+      source = ../../../../.config/nvim;
+      recursive = true;
       force = true;
     };
   };
