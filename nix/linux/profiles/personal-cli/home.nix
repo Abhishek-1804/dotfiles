@@ -19,12 +19,8 @@
 
 # Manage dotfiles and configurations
   home.file = {
-    ".config/ghostty/config" = {
-      source = ../../../../.config/ghostty/config;
-      force = true;
-    };
-    ".config/nvim" = {
-      source = ../../../../.config/nvim;
+    ".config" = {
+      source = ../../../../.config;
       recursive = true;
       force = true;
     };

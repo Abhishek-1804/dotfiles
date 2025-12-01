@@ -9,13 +9,8 @@
 
   # Manage files
   home.file = {
-    ".config/ghostty" = {
-      source = ../../../../.config/ghostty/config;
-      recursive = true;
-      force = true;
-    };
-    ".config/nvim" = {
-      source = ../../../../.config/nvim;
+    ".config" = {
+      source = ../../../../.config;
       recursive = true;
       force = true;
     };

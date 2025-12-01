@@ -27,6 +27,7 @@ essentials ++ [
 
 # Networking and Security Tools
   pkgs.nginx
+  pkgs.mtr
   pkgs.nmap
   pkgs.aria2
   pkgs.rsync

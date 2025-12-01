@@ -31,6 +31,7 @@
 
         brews = [
           "gnu-sed"
+          "xleak"
             "llvm@17"
             "luarocks"
             "container-compose"
@@ -46,6 +47,7 @@
             "boosteroid"
             "chatgpt"
             "claude"
+            "adobe-acrobat-reader"
             "container"
             "cursor"
             "discord"
