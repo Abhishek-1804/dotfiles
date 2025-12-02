@@ -10,3 +10,6 @@ font-family = MesloLGS Nerd Font Mono
 mouse-hide-while-typing = true
 macos-titlebar-style = transparent
 macos-option-as-alt = true
+
+# Claude Code integration
+keybind = shift+enter=text:\x1b[13;2u
