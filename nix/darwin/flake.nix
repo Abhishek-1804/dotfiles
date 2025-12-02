@@ -30,8 +30,8 @@
         enable = true;
 
         brews = [
-          "gnu-sed"
-          "xleak"
+            "gnu-sed"
+            "xleak"
             "llvm@17"
             "luarocks"
             "container-compose"
@@ -120,7 +120,6 @@
       system.defaults = {
         dock.autohide = true;
         dock.persistent-apps = [
-          "System/Applications/Music.app"
             "System/Applications/App Store.app"
             "System/Applications/FaceTime.app"
             "System/Applications/System Settings.app"
@@ -130,13 +129,10 @@
             "/Applications/Safari.app"
             "/Applications/Vivaldi.app"
             "/Applications/WhatsApp.app"
-            "/Applications/ChatGPT.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
             "/System/Applications/Utilities/Activity Monitor.app"
-            "/Applications/Surfshark.app"
             "/System/Applications/iPhone Mirroring.app"
-            "/System/Applications/TV.app"
         ];
         loginwindow.GuestEnabled = false;
         finder.FXPreferredViewStyle = "clmv";

@@ -68,4 +68,5 @@ essentials ++ [
   pkgs.ollama
   pkgs.gemini-cli
   pkgs.opencode
+  pkgs.claude-code
 ]

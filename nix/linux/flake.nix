@@ -13,11 +13,19 @@
 
   outputs = { self, nixpkgs, home-manager }: {
     homeConfigurations = {
-      # Full profile with all packages
-      personal = home-manager.lib.homeManagerConfiguration {
+      # Full CLI and GUI profile with all packages
+      complete = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = builtins.currentSystem; };
         modules = [
-          ./profiles/personal/home.nix
+          ./profiles/complete/home.nix
+        ];
+      };
+
+      # Full CLI profile with all packages
+      personal-cli = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = builtins.currentSystem; };
+        modules = [
+          ./profiles/personal-cli/home.nix
         ];
       };
 
