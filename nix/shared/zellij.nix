@@ -4,6 +4,9 @@
   enable = true;
 
   settings = {
+    # Configure leader keys
+    modifier = "Ctrl";              # Primary modifier
+    secondary_modifier = "Shift Ctrl";  # Secondary modifier
 
     keybinds = {
       shared = {

@@ -19,7 +19,7 @@
 # Allow proprietary software
       nixpkgs.config.allowUnfree = true;
 
-      environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
+      environment.systemPackages = pkgs.callPackage ../shared/modules/packages-cli.nix {} ++ [
           pkgs.mkalias
           pkgs.openssl
           pkgs.mas
@@ -43,11 +43,11 @@
         ];
 
         casks = [
-          "android-studio"
+            "adobe-acrobat-reader"
+            "android-studio"
             "boosteroid"
             "chatgpt"
             "claude"
-            "adobe-acrobat-reader"
             "container"
             "cursor"
             "discord"
@@ -56,10 +56,15 @@
             "google-chrome"
             "google-drive"
             "intellij-idea"
+            "plex-media-server"
             "lm-studio"
             "logi-options+"
+            "microsoft-excel"
+            "microsoft-powerpoint"
             "microsoft-teams"
+            "microsoft-word"
             "notion"
+            "obs"
             "orbstack"
             "postman"
             "raycast"
@@ -73,7 +78,6 @@
             "whatsapp"
             "windsurf"
             "zoom"
-            "obs"
             ];
 
         onActivation.cleanup = "uninstall";
@@ -82,9 +86,6 @@
 
         masApps = {
           "Amphetamine" = 937984704;
-          "Microsoft Word" = 462054704;
-          "Microsoft Excel" = 462058435;
-          "Microsoft PowerPoint" = 462062816;
           "iMovie" = 408981434;
           "Tap Bot" = 6444782835;
           "DaVinci Resolve" = 571213070;

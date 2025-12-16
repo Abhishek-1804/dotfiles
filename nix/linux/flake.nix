@@ -29,11 +29,11 @@
         ];
       };
 
-      # Minimal profile with essential packages only
-      minimal = home-manager.lib.homeManagerConfiguration {
+      # Minimal CLI profile with essential packages only
+      minimal-cli = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs { system = builtins.currentSystem; };
         modules = [
-          ./profiles/minimal/home.nix
+          ./profiles/minimal-cli/home.nix
         ];
       };
     };

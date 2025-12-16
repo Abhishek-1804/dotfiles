@@ -10,12 +10,13 @@
   home.homeDirectory = builtins.getEnv "HOME";
   home.stateVersion = "24.05"; # Update to match the Nixpkgs version you're using
 
- # Import system-level packages from shared/modules/packages.nix
-     home.packages = pkgs.callPackage ../../../shared/modules/packages.nix {} ++ [
+ # Import CLI and GUI packages from shared/modules
+     home.packages =
+       pkgs.callPackage ../../../shared/modules/packages-cli.nix {} ++
+       pkgs.callPackage ../../../shared/modules/packages-gui.nix {} ++ [
  # Add user-level packages here
      pkgs.btop
      pkgs.hollywood
-     pkgs.raycast
      ];
 
 # Manage dotfiles and configurations
