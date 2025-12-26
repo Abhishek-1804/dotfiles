@@ -21,6 +21,7 @@ essentials-cli ++ [
 
 # Containerization
   pkgs.kubectl
+  pkgs.k9s
   pkgs.minikube
   pkgs.podman
   pkgs.podman-compose
