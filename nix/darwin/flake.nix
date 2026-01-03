@@ -44,6 +44,7 @@
 
         casks = [
             "adobe-acrobat-reader"
+            "arc"
             "android-studio"
             "boosteroid"
             "chatgpt"
@@ -128,10 +129,11 @@
             "System/Applications/Messages.app"
             "System/Applications/Passwords.app"
             "/Applications/Safari.app"
-            "/Applications/Vivaldi.app"
+            "/Applications/Arc.app"
             "/Applications/WhatsApp.app"
             "/Applications/Notion.app"
             "/Applications/Ghostty.app"
+            "/Applications/Wispr Flow.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/System/Applications/iPhone Mirroring.app"
         ];
