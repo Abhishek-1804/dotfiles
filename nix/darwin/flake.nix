@@ -53,6 +53,7 @@
             "cursor"
             "discord"
             "dockey"
+            "utm"
             "ghostty"
             "google-chrome"
             "google-drive"

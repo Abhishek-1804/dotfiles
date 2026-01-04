@@ -32,6 +32,7 @@ essentials-cli ++ [
   pkgs.nmap
   pkgs.aria2
   pkgs.rsync
+  pkgs.rclone
   pkgs.ngrok
   pkgs.speedtest-rs
   pkgs.hping
