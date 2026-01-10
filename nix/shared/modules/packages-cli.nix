@@ -41,6 +41,7 @@ essentials-cli ++ [
 
 # CLI Utilities and System Tools
   pkgs.stow
+  pkgs.chezmoi
   pkgs.hwloc
   pkgs.eza
 

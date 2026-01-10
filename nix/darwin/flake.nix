@@ -48,6 +48,7 @@
             "android-studio"
             "boosteroid"
             "chatgpt"
+            "nikitabobko/tap/aerospace"
             "claude"
             "container"
             "cursor"
