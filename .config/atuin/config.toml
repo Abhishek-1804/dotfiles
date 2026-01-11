@@ -1,0 +1,18 @@
+# Local-only configuration (no cloud sync)
+auto_sync = false
+sync_address = ""
+update_check = false
+
+# UI
+style = "auto"
+enter_accept = true
+
+# Search
+search_mode = "fuzzy"
+filter_mode = "global"
+filter_mode_shell_up_key_binding = "session"
+
+# History
+inline_height = 20
+show_preview = true
+max_preview_height = 4

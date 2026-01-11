@@ -1,12 +1,11 @@
 { pkgs, ... }:
 
 let
-# import the essentials-cli list
-# These packages mainly define CLI Utilities. GUI packages should be placed in GUI-specific modules
-essentials-cli = import ./essentials-cli.nix { inherit pkgs; };
+# import the essentials list
+essentials = import ./essentials.nix { inherit pkgs; };
 in
 
-essentials-cli ++ [
+essentials ++ [
 # Programming Languages and Development Tools
   pkgs.jdk
   pkgs.bun

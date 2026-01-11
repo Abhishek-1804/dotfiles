@@ -14,22 +14,22 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
     let
-    configuration = { pkgs, config, ... }: {
+      configuration = { pkgs, config, ... }: {
 
-# Allow proprietary software
-      nixpkgs.config.allowUnfree = true;
+        # Allow proprietary software
+        nixpkgs.config.allowUnfree = true;
 
-      environment.systemPackages = pkgs.callPackage ../shared/modules/packages-cli.nix {} ++ [
+        environment.systemPackages = pkgs.callPackage ../shared/modules/packages.nix {} ++ [
           pkgs.mkalias
           pkgs.openssl
           pkgs.mas
-      ];
+        ];
 
-# Homebrew
-      homebrew = {
-        enable = true;
+        # Homebrew
+        homebrew = {
+          enable = true;
 
-        brews = [
+          brews = [
             "gnu-sed"
             "xleak"
             "llvm@17"
@@ -40,9 +40,9 @@
             "watch"
             "yt-dlp"
             "btop"
-        ];
+          ];
 
-        casks = [
+          casks = [
             "adobe-acrobat-reader"
             "arc"
             "android-studio"
@@ -71,6 +71,7 @@
             "orbstack"
             "postman"
             "raycast"
+            "zed"
             "slack"
             "stats"
             "steam"
@@ -81,33 +82,33 @@
             "whatsapp"
             "windsurf"
             "zoom"
-            ];
+          ];
 
-        onActivation.cleanup = "uninstall";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
+          onActivation.cleanup = "uninstall";
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
 
-        masApps = {
-          "Amphetamine" = 937984704;
-          "iMovie" = 408981434;
-          "Tap Bot" = 6444782835;
-          "DaVinci Resolve" = 571213070;
+          masApps = {
+            "Amphetamine" = 937984704;
+            "iMovie" = 408981434;
+            "Tap Bot" = 6444782835;
+            "DaVinci Resolve" = 571213070;
+          };
         };
-      };
 
-# Fonts
-      fonts.packages = [
-        pkgs.nerd-fonts.jetbrains-mono
-      ];
+        # Fonts
+        fonts.packages = [
+          pkgs.nerd-fonts.jetbrains-mono
+        ];
 
-# Spotlightable Nix apps via aliases
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = [ "/Applications" ];
-        };
-      in pkgs.lib.mkForce ''
+        # Spotlightable Nix apps via aliases
+        system.activationScripts.applications.text = let
+          env = pkgs.buildEnv {
+            name = "system-applications";
+            paths = config.environment.systemPackages;
+            pathsToLink = [ "/Applications" ];
+          };
+        in pkgs.lib.mkForce ''
 # Set up applications.
         echo "setting up /Applications..." >&2
         rm -rf /Applications/Nix\ Apps
@@ -118,12 +119,12 @@
             echo "copying $src" >&2
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
             done
-            '';
+          '';
 
-# macOS defaults
-      system.defaults = {
-        dock.autohide = true;
-        dock.persistent-apps = [
+        # macOS defaults
+        system.defaults = {
+          dock.autohide = true;
+          dock.persistent-apps = [
             "System/Applications/App Store.app"
             "System/Applications/FaceTime.app"
             "System/Applications/System Settings.app"
@@ -138,68 +139,68 @@
             "/Applications/Wispr Flow.app"
             "/System/Applications/Utilities/Activity Monitor.app"
             "/System/Applications/iPhone Mirroring.app"
-        ];
-        loginwindow.GuestEnabled = false;
-        finder.FXPreferredViewStyle = "clmv";
-        NSGlobalDomain.AppleInterfaceStyle = "Dark";
-        NSGlobalDomain.KeyRepeat = 2;
-      };
+          ];
+          loginwindow.GuestEnabled = false;
+          finder.FXPreferredViewStyle = "clmv";
+          NSGlobalDomain.AppleInterfaceStyle = "Dark";
+          NSGlobalDomain.KeyRepeat = 2;
+        };
 
-      system.keyboard.enableKeyMapping = true;
-      system.keyboard.remapCapsLockToControl = true;
+        system.keyboard.enableKeyMapping = true;
+        system.keyboard.remapCapsLockToControl = true;
 
-# Touch ID for sudo
-      security.pam.services.sudo_local.touchIdAuth = true;
+        # Touch ID for sudo
+        security.pam.services.sudo_local.touchIdAuth = true;
 
-# nix-darwin now manages nix-daemon when nix.enable = true
-      nix.enable = true;
+        # nix-darwin now manages nix-daemon when nix.enable = true
+        nix.enable = true;
 
-      nix.settings = {
-        experimental-features = [ "nix-command" "flakes" ];
-        trusted-users = [ "root" "abhishekdeshpande" ];
-        substituters = [
-          "https://cache.nixos.org"
+        nix.settings = {
+          experimental-features = [ "nix-command" "flakes" ];
+          trusted-users = [ "root" "abhishekdeshpande" ];
+          substituters = [
+            "https://cache.nixos.org"
             "https://nix-community.cachix.org"
-        ];
-        trusted-public-keys = [
-          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        ];
-      };
+          ];
+          trusted-public-keys = [
+            "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          ];
+        };
 
-      nix.gc = {
-        automatic = true;
-        options = "--delete-older-than 7d";
-      };
+        nix.gc = {
+          automatic = true;
+          options = "--delete-older-than 7d";
+        };
 
-      nix.optimise.automatic = true;
+        nix.optimise.automatic = true;
 
-# Shells
-      programs.zsh.enable = true;  # create /etc/zshrc that sources nix-darwin env
+        # Shells
+        programs.zsh.enable = true;  # create /etc/zshrc that sources nix-darwin env
         users.users.abhishekdeshpande.shell = pkgs.zsh;
 
-# Version stamp for darwin-version
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+        # Version stamp for darwin-version
+        system.configurationRevision = self.rev or self.dirtyRev or null;
 
-# Darwin module state version
-      system.stateVersion = 5;
+        # Darwin module state version
+        system.stateVersion = 5;
 
-# Platform
-      nixpkgs.hostPlatform = "aarch64-darwin";
+        # Platform
+        nixpkgs.hostPlatform = "aarch64-darwin";
 
-# Primary user
-      system.primaryUser = "abhishekdeshpande";
+        # Primary user
+        system.primaryUser = "abhishekdeshpande";
 
-# User home
-      users.users.abhishekdeshpande.home = "/Users/abhishekdeshpande";
-    };
-  in
-  {
-# Build with:
-# darwin-rebuild build --flake .#Personal
-    darwinConfigurations = {
-      "Personal" = nix-darwin.lib.darwinSystem {
-        modules = [
-          configuration
+        # User home
+        users.users.abhishekdeshpande.home = "/Users/abhishekdeshpande";
+      };
+    in
+      {
+      # Build with:
+      # darwin-rebuild build --flake .#Personal
+      darwinConfigurations = {
+        "Personal" = nix-darwin.lib.darwinSystem {
+          modules = [
+            configuration
             nix-homebrew.darwinModules.nix-homebrew
             {
               nix-homebrew = {
@@ -209,16 +210,16 @@
                 autoMigrate = true;
               };
             }
-        home-manager.darwinModules.home-manager {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.abhishekdeshpande = import ./profiles/personal/home.nix;
-        }
-        ];
+            home-manager.darwinModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.abhishekdeshpande = import ./profiles/personal/home.nix;
+            }
+          ];
+        };
       };
-    };
 
-# Expose package set for convenience
-    darwinPackages = self.darwinConfigurations."Personal".pkgs;
-  };
+      # Expose package set for convenience
+      darwinPackages = self.darwinConfigurations."Personal".pkgs;
+    };
 }

@@ -22,6 +22,8 @@
 #   pkgs.docker-credential-helpers
 
   # CLI Utilities and System Tools
+  pkgs.starship
+  pkgs.atuin
   pkgs.bat
   pkgs.fd
   pkgs.duf
