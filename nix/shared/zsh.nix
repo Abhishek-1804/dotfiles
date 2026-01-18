@@ -6,7 +6,9 @@
   autosuggestion.enable = true;
   syntaxHighlighting.enable = true;
   history.size = 10000;
-  initExtra = ''
+  initContent = ''
+      eval "$(starship init bash)"  # For bash
+      eval "$(starship init zsh)"   # For zsh
   '';
   oh-my-zsh = {
     enable = true;

@@ -27,6 +27,7 @@
   pkgs.duf
   pkgs.ripgrep
   pkgs.neovim
+  pkgs.zellij
   pkgs.fzf
   pkgs.lazygit
   pkgs.lazydocker

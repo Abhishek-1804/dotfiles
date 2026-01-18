@@ -5,6 +5,8 @@
 
   # Packages to install
   home.packages = [
+  pkgs.starship
+  pkgs.atuin
   ];
 
   # Manage files
