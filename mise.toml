@@ -1,4 +1,5 @@
-# Machine bootstrap: `mise bootstrap` from this directory.
+# Shared across machines. OS-specific setup lives in mise.<env>.toml:
+#   mise -E arch bootstrap
 
 [vars]
 name = "abhishek deshpande"
@@ -9,6 +10,3 @@ email = "abhidp55@gmail.com"
 "~/.config/atuin/config.toml" = "home/atuin/config.toml"
 "~/.config/starship.toml" = "home/starship.toml"
 
-[bootstrap.packages]
-"pacman:atuin" = "latest"
-"pacman:starship" = "latest"

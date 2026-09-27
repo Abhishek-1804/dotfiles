@@ -9,7 +9,8 @@ Everything is declared in `mise.toml`; the files themselves live in `home/`.
 | `home/atuin/config.toml` | `~/.config/atuin/config.toml` | symlink |
 | `home/starship.toml` | `~/.config/starship.toml` | symlink |
 
-`mise bootstrap` also installs `atuin` and `starship` with pacman.
+OS-specific setup lives in `mise.<env>.toml` and is selected with `-E`. `mise.arch.toml`
+installs `atuin` and `starship` with pacman.
 
 ## Setup
 
@@ -17,8 +18,8 @@ Everything is declared in `mise.toml`; the files themselves live in `home/`.
 git clone https://github.com/Abhishek-1804/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 mise trust
-mise bootstrap --dry-run
-mise bootstrap --force-dotfiles   # first run: replaces existing target files
+mise -E arch bootstrap --dry-run
+mise -E arch bootstrap --force-dotfiles   # first run: replaces existing target files
 ```
 
 ## Day to day
@@ -30,7 +31,7 @@ The gitconfig is rendered, so edit `home/gitconfig` and re-apply:
 mise dot status           # what's applied / drifted
 mise dot diff             # show pending changes
 mise dot apply            # apply dotfiles only
-mise bootstrap plan       # declarative plan (packages + dotfiles)
+mise -E arch bootstrap plan   # declarative plan (packages + dotfiles)
 ```
 
 ## Manual steps
