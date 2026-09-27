@@ -1,0 +1,14 @@
+# Machine bootstrap: `mise bootstrap` from this directory.
+
+[vars]
+name = "abhishek deshpande"
+email = "abhidp55@gmail.com"
+
+[dotfiles]
+"~/.gitconfig" = { source = "home/gitconfig", mode = "template" }
+"~/.config/atuin/config.toml" = "home/atuin/config.toml"
+"~/.config/starship.toml" = "home/starship.toml"
+
+[bootstrap.packages]
+"pacman:atuin" = "latest"
+"pacman:starship" = "latest"
