@@ -1,5 +1,5 @@
 # Shared across machines. OS-specific setup lives in mise.<env>.toml:
-#   mise -E arch bootstrap
+#   mise -E omarchy bootstrap
 
 [vars]
 name = "abhishek deshpande"

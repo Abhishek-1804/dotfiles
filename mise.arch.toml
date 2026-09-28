@@ -1,5 +1,0 @@
-# Arch / Omarchy: loaded with `mise -E arch bootstrap`.
-
-[bootstrap.packages]
-"pacman:atuin" = "latest"
-"pacman:starship" = "latest"

@@ -1,0 +1,26 @@
+# Omarchy: loaded with `mise -E omarchy bootstrap`.
+# Packages installed on top of stock Omarchy (its own list: /usr/share/omarchy/install/*.packages).
+
+[bootstrap.packages]
+"pacman:1password" = "latest"
+"pacman:atuin" = "latest"
+"pacman:aws-cli-v2" = "latest"
+"pacman:claude-desktop" = "latest"
+"pacman:croc" = "latest"
+"pacman:ghostty" = "latest"
+"pacman:google-chrome" = "latest"
+"pacman:ollama" = "latest"
+"pacman:spotify" = "latest"
+"pacman:starship" = "latest"
+"pacman:steam" = "latest"
+"pacman:tailscale" = "latest"
+"pacman:thunderbird" = "latest"
+"pacman:vlc" = "latest"
+"pacman:vlc-plugin-ffmpeg" = "latest"
+"pacman:voxtype-bin" = "latest"
+"pacman:yazi" = "latest"
+"pacman:zed" = "latest"
+"aur:insync" = "latest"
+"aur:jetbrains-toolbox" = "latest"
+"aur:postman-bin" = "latest"
+"aur:surfshark-client" = "latest"
