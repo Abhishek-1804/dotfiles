@@ -1,0 +1,16 @@
+[tools]
+claude = "latest"
+codex = "latest"
+gh = "latest"
+go = "latest"
+k9s = "0.51.0"
+kubectl = "1.30.2"
+node = "26.8.1"
+pi = "latest"
+
+[settings]
+trusted_config_paths = ["~/Work"]
+minimum_release_age = "24h"
+
+[settings.upgrade]
+auto_prune = true
