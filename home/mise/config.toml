@@ -3,9 +3,9 @@ claude = "latest"
 codex = "latest"
 gh = "latest"
 go = "latest"
-k9s = "0.51.0"
-kubectl = "1.30.2"
-node = "26.8.1"
+k9s = "latest"
+kubectl = "latest"
+node = "latest"
 pi = "latest"
 
 [settings]
