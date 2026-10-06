@@ -1,12 +1,17 @@
 [tools]
+atuin = "latest"
+aws-cli = { version = "latest", symlink_bins = "true" }
 claude = "latest"
 codex = "latest"
+croc = "latest"
 gh = "latest"
 go = "latest"
 k9s = "latest"
 kubectl = "latest"
 node = "latest"
+ollama = "latest"
 pi = "latest"
+yazi = "latest"
 
 [settings]
 trusted_config_paths = ["~/Work"]
