@@ -10,12 +10,12 @@ k9s = "latest"
 kubectl = "latest"
 node = "latest"
 ollama = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
 pi = "latest"
 yazi = "latest"
 
 [settings]
 trusted_config_paths = ["~/Work"]
-minimum_release_age = "24h"
 
 [settings.upgrade]
 auto_prune = true
