@@ -13,6 +13,7 @@ node = "latest"
 ollama = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
 pi = "latest"
+starship = "latest"
 yazi = "latest"
 
 [settings]
