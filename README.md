@@ -8,6 +8,7 @@ Everything is declared in `mise.toml`; the files themselves live in `home/`.
 | `home/gitconfig` | `~/.gitconfig` | template (vars in `mise.toml`) |
 | `home/atuin/config.toml` | `~/.config/atuin/config.toml` | symlink |
 | `home/starship.toml` | `~/.config/starship.toml` | symlink |
+| `home/zed/` | `~/.config/zed/` | symlink (whole directory) |
 
 OS-specific setup lives in `mise.<env>.toml` and is selected with `-E`. `mise.omarchy.toml`
 installs the packages added on top of stock Omarchy (pacman + AUR).

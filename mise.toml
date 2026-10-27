@@ -9,5 +9,6 @@ email = "abhidp55@gmail.com"
 "~/.config/atuin/config.toml" = "home/atuin/config.toml"
 "~/.config/mise/config.toml" = { source = "home/mise/config.toml" }
 "~/.config/starship.toml" = "home/starship.toml"
+"~/.config/zed" = "home/zed"
 "~/.gitconfig" = { source = "home/gitconfig", mode = "template" }
 
